@@ -47,7 +47,7 @@ if( 'left-sidebar' == $designlayout ){
 
 			endwhile;
 
-			the_posts_navigation();
+			do_action('bloge_action_navigation');
 
 		else :
 

@@ -51,6 +51,25 @@ if ( !function_exists('bloge_sidebar_layout') ) :
 endif;
 
 /**
+ * Pagination options
+ *
+ * @since bloge 1.0.0
+ *
+ * @param null
+ * @return array $bloge_pagination_option
+ *
+ */
+if ( !function_exists('bloge_pagination_option') ) :
+    function bloge_pagination_option() {
+        $bloge_pagination_option =  array(
+            'default' => __( 'Default Pagination', 'bloge'),
+            'numeric'  => __( 'Numeric Pagination' , 'bloge')
+        );
+        return apply_filters( 'bloge_pagination_option', $bloge_pagination_option );
+    }
+endif;
+
+/**
  *  Default Theme options
  *
  * @since bloge 1.0.0
@@ -79,6 +98,7 @@ if ( !function_exists('bloge_default_theme_options') ) :
 			'bloge-sticky-sidebar-option' => 1,
 			'bloge-slider-read-more' => esc_html__('Read More','bloge'),
             'bloge-exclude-slider-category'=>'',
+            'bloge-blog-pagination-type-options' => 'default',
 );
         return apply_filters( 'bloge_default_theme_options', $default_theme_options );
     }

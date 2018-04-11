@@ -80,4 +80,24 @@ $wp_customize->add_control('bloge_theme_options[bloge-sticky-sidebar-option]',
          )
     );
 
+/* Pagination Options */
+$choices = bloge_pagination_option();
+$wp_customize->add_setting( 'bloge_theme_options[bloge-blog-pagination-type-options]', array(
+    'capability'        => 'edit_theme_options',
+    'default'           => $defaults['bloge-blog-pagination-type-options'],
+    'sanitize_callback' => 'bloge_sanitize_select'
+) );
+
+$wp_customize->add_control('bloge_theme_options[bloge-blog-pagination-type-options]',
+            array(
+            'choices'   => $choices,
+            'label'     => __( 'Pagination Type', 'bloge'),
+            'description' => __('Select Pagination Type From Below', 'bloge'),
+            'section'   => 'bloge-site-layout',
+            'settings'  => 'bloge_theme_options[bloge-blog-pagination-type-options]',
+            'type'      => 'select',
+            'priority'  => 10
+         )
+    );
+
 
