@@ -157,11 +157,13 @@ add_action( 'widgets_init', 'bloge_widgets_init' );
 function bloge_scripts() {
 	/*google font  */
 	global $bloge_theme_options;
-	
 		$font_family_url = esc_url($bloge_theme_options['bloge-font-family-url']);
 		if(!empty($font_family_url)):
     	wp_enqueue_style( 'bloge-googleapis', $font_family_url, array(), null, false, 'all' );
     endif;
+
+     wp_enqueue_style( 'heading-googleapis', '//fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900|Open+Sans:300,400', array(), null );
+
 	/*Font-Awesome-master*/
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/framework/Font-Awesome/css/font-awesome.min.css', array(), '4.5.0' );
 	

@@ -37,7 +37,7 @@ if (!function_exists('bloge_related_post_below')) :
                 'category__in' => $category_ids,
                 'post__not_in' => array($post_id),
                 'post_type' => 'post',
-                'posts_per_page' => 3,
+                'posts_per_page' => 2,
                 'post_status' => 'publish',
                 'ignore_sticky_posts' => true
             );
@@ -45,15 +45,15 @@ if (!function_exists('bloge_related_post_below')) :
             ?>
             <div class="related-post news-block">
                 <header class="entry-header">
-                    <h1 class="entry-title">
+                    <h2 class="entry-title">
                         <?php esc_html_e('Related Posts', 'bloge') ?>
-                    </h1>
+                    </h2>
                 </header>
                 <div class="row">
                     <?php
                     while ($bloge_plus_featured_query->have_posts()) :
                         $bloge_plus_featured_query->the_post(); ?>
-                         <article class="col-sm-4 id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
+                         <article class="col-sm-6 id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
                                 <div class="bloge-post-wrapper <?php if ( !has_post_thumbnail () ) { echo "no-feature-image"; } ?>">
                                    <!--post thumbnal options-->
                                     <?php if ( has_post_thumbnail () ) 
@@ -65,26 +65,17 @@ if (!function_exists('bloge_related_post_below')) :
                                         </div><!-- .post-thumb-->
                               <?php } ?>
                                     <div class="content-wrap">
-                                        <div class="catagories">
-                                            <?php bloge_entry_footer(); ?>
-                                        </div>
-
-                                        <div class="entry-header">
+                                        <div class="related-header">
                                             <?php
                                             if ( is_single() ) :
                                                
-                                                the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>', '</h1>' );
+                                                the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>', '</h3>' );
                                             else :
-                                                the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+                                                the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
                                             endif; ?>
                                         </div><!-- .entry-header -->
-
-                                        <div class="entry-content">
-                                            <?php echo esc_html( wp_trim_words( get_the_excerpt(),  20, ' ' ) ); ?>
-                                        </div><!-- .entry-content -->
+                                        <div class="date"><?php the_date(); ?></div>
                                     </div>
-
-                                    
                                 </div>
                         </article><!-- #post-## -->
                     <?php endwhile;

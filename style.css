@@ -89,8 +89,15 @@ template {
 	display: none;
 }
 
-a {
-	background-color: transparent;
+a { 
+	color: #010101;
+	text-decoration: none;
+	-webkit-transition: all .3s ease-in;
+	transition: all .3s ease-in;
+}
+
+a:hover { 
+	text-decoration: none;
 }
 
 a:active,
@@ -112,9 +119,6 @@ dfn {
 	font-style: italic;
 }
 
-h1 {
-	margin: 0.67em 0;
-}
 
 mark {
 	background: #ff0;
@@ -268,282 +272,172 @@ th {
 --------------------------------------------------------------*/
 
 body,
-
 button,
-
 input,
-
 select,
-
 textarea {
-
-	color: #404040;
-
-	font-family: 'Poppins', sans-serif;
-
+	color: #484848;
+	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 14px;
-
-	line-height: 1.5;
-
+	line-height: 1.8571428;
 	font-weight: normal;
-
 }
-
-
 
 h1,
-
 h2,
-
 h3,
-
 h4,
-
 h5,
+h6 {
+	font-family: 'Merriweather', serif; 
+	clear: both;
+	font-weight: 600;
+	margin: 0 0 15px;
+}
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 26px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+h5 {
+	font-size: 16px;
+}
 
 h6 {
-
-	clear: both;
-
-	font-weight: 600;
-
+	font-size: 14px;
 }
-
-
 
 p {
-
-	margin-bottom: 1.5em;
-
+	margin-bottom: 25px;
 }
-
-
 
 dfn,
-
 cite,
-
 em,
-
 i {
-
 	font-style: italic;
-
 }
-
-
 
 blockquote {
-
 	margin: 0 1.5em;
-
 }
-
-
 
 address {
-
 	margin: 0 0 1.5em;
-
 }
-
-
 
 pre {
-
 	background: #eee;
-
 	font-family: "Courier 10 Pitch", Courier, monospace;
-
 	font-size: 14px;
-
 	line-height: 1.6;
-
 	margin-bottom: 1.6em;
-
 	max-width: 100%;
-
 	overflow: auto;
-
 	padding: 1.6em;
-
 }
-
-
 
 code,
-
 kbd,
-
 tt,
-
 var {
-
 	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-
 	font-size: 14px;
-
 }
-
-
 
 abbr,
-
 acronym {
-
 	border-bottom: 1px dotted #666;
-
 	cursor: help;
-
 }
-
-
 
 mark,
-
 ins {
-
 	background: #fff9c0;
-
 	text-decoration: none;
-
 }
-
-
 
 big {
-
 	font-size: 125%;
-
 }
 
-
-
 /*--------------------------------------------------------------
-
 # Elements
-
 --------------------------------------------------------------*/
 
 html {
-
 	box-sizing: border-box;
-
 }
 
 
 
 *,
-
 *:before,
-
 *:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-
 	box-sizing: inherit;
-
 }
 
-
-
 body {
-
 	background: #f3f4f4; /* Fallback for when there is no custom background color defined. */
 
 }
 
-
-
 blockquote:before,
-
 blockquote:after,
-
 q:before,
-
 q:after {
-
 	content: "";
-
 }
-
-
 
 blockquote,
-
 q {
-
 	quotes: "" "";
-
 }
-
-
 
 hr {
-
 	background-color: #ccc;
-
 	border: 0;
-
 	height: 1px;
-
 	margin-bottom: 1.5em;
-
 }
-
-
 
 ul,
-
 ol {
-
 	margin: 0 0 1.5em 3em;
-
 }
-
-
 
 ul {
-
 	list-style: disc;
-
 }
-
-
 
 ol {
-
 	list-style: decimal;
-
 }
-
-
 
 li > ul,
-
 li > ol {
-
 	margin-bottom: 0;
-
 	margin-left: 1.5em;
-
 }
-
-
 
 dt {
-
 	font-weight: bold;
-
 }
-
-
 
 dd {
-
 	margin: 0 1.5em 1.5em;
-
 }
-
-
 
 img {
 
@@ -562,7 +456,6 @@ figure {
 }
 
 
-
 table {
 
 	margin: 0 0 1.5em;
@@ -570,7 +463,6 @@ table {
 	width: 100%;
 
 }
-
 
 
 /*--------------------------------------------------------------
@@ -1250,6 +1142,7 @@ embed, iframe, object {
     background: #ffffff;
     z-index: 5;
     border-top: 1px solid #ececec;
+    border-bottom: 1px solid #ececec;
 }
 .main-menu{
 	position:relative;	
@@ -1739,79 +1632,50 @@ embed, iframe, object {
 --------------------------------------------------------------*/
 
 .main-banner {
-
 	background-size: cover;
-
 	display: block;
-
 	margin-bottom: 30px;
-
 	padding: 85px 0 35px 0;
-
 	text-align: center;
-
     width: 100%;
-
 }
-
-
 
 .main-banner.banner-enabled,
-
 .main-banner.banner-enabled .site-branding{
-
 	position: relative;
-
 }
 
-
-
 .main-banner.banner-enabled.overlay-enabled:before{
-
 	background: rgba(0,0,0,0.45);
-
 	content: "";
-
 	position: absolute;
-
 	top:0;
-
 	left: 0;
-
 	width: 100%;
-
 	height: 100%;
-
 }
 
 
 
 .sticky-top .main-banner {
-
 	padding-top: 135px;
-
 }
 
 
 
 .main-banner h1.site-title {
-
 	margin: 0px;
-
     padding: 0px 0 10px 0;
-
 }
-
-
 
 .site-branding a img.custom-logo {
 
     padding-bottom: 10px;
 
 }
-
-
-
+.top-header-logo{
+	padding:30px 0;
+}
 .site-title a{
 	color: #222;
 	font-size: 55px;
@@ -1824,19 +1688,14 @@ embed, iframe, object {
 }
 p.site-title, 
 h1.site-title {
-    margin: 20px 0 5px 0;
+    margin: 0;
 }
 
 .site-description {
-
 	color: #818181;
-
     font-size: 14px;  
-
     letter-spacing: 3px;
-
     margin-bottom: 0px;
-
     text-align: center;
 
 }
@@ -1846,10 +1705,11 @@ h1.site-title {
 
 --------------------------------------------------------------*/
 .top-header{
-    position: relative;
-    font-size: 14px;
-    color: #ffffff;
-    background: #292929;
+	position: relative;
+	font-size: 14px;
+	color: #333;
+	background: #fff;
+	padding:10px 0;
 }
 .top-header ul{
 	margin:0;
@@ -1864,8 +1724,8 @@ h1.site-title {
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 2px;
-    color: #e2e2e2;
-    line-height: 48px;
+    color: #333;
+    line-height: 36px;
     text-transform: uppercase;
     display: inline-block;
     transition: all 500ms ease;
@@ -1874,8 +1734,6 @@ h1.site-title {
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
 }
-
-
 
 .top-header .menu-item-has-children:hover .sub-menu {
     display: block;
@@ -1963,7 +1821,7 @@ h1.site-title {
     float: right;
 }
 .top-search .search-form{
-	margin:6px 0;
+	margin:0;
 	position:relative;
 }
 .top-search label{
@@ -1971,7 +1829,6 @@ h1.site-title {
 }
 .top-search input[type="search"] {
     height: 36px;
-    border: 0;
     width: 100%;
     padding-right: 60px;
 }
@@ -1987,8 +1844,8 @@ h1.site-title {
 }
 
 /*-----# Top Date -----------*/
-.header-date span{
-	line-height: 130px;
+.header-date span {
+    line-height: 75px;
 }
 /*-----# Top Social -----------*/
 .social-links  ul{
@@ -1997,13 +1854,13 @@ h1.site-title {
 }
 .social-links  ul li{
   display:inline;
-  padding: 3px 5px;
+  padding: 0 5px;
   float:right;
 }
 .social-links ul li a {
     font-size: 0;
     color: transparent;
-    line-height: 130px;
+    line-height: 75px;
 }
 .social-links  ul li a:hover{
   color: #54be73
@@ -2593,34 +2450,16 @@ section.owl-wrapper{
 
 
 .entry-header h2.entry-title a {
-
-    color: #404040;
-
+    font-size: 25px;
     font-weight: 700;
-
-    font-size: 28px;
-
-    line-height: 1.4em;
-
-    letter-spacing: 2px;
-
-    -moz-transition: all .25s ease;
-
-    -ms-transition: all .25s ease;
-
-    -ms-transition: all .25s ease;
-
-    -o-transition: all .25s ease;
-
-    -webkit-transition: all .25s ease;
-
-    transition: all .25s ease;
-
-    text-decoration: none;
-
+    letter-spacing: -0.025em;
+    line-height: 1.5;
+    color:#111111;
 }
-
-
+.entry-header h2.entry-title a em {
+    font-weight: 300;
+    font-style: italic;
+}
 
 .entry-header .author-date {
 
@@ -2657,15 +2496,6 @@ section.owl-wrapper{
 }
 
 
-
-.entry-content p {
-
-   font-size: 16px;
-
-   color: #666666;
-
-}
-
 .entry-img {
 
 	margin: 18px 0 23px 0;
@@ -2677,13 +2507,9 @@ section.owl-wrapper{
 
 
 .read-more {
-
     display: block;
-
     margin: 30px 0;
-
     text-align: center;
-
 }
 
 
@@ -2744,8 +2570,22 @@ section.owl-wrapper{
 
 }
 
-
-
+.entry-footer a {
+    display: inline-block;
+    border: 1px solid #e4e4e4;
+    border-radius: 1px;
+    box-sizing: border-box;
+    padding: 10px 24px;
+    color: #adadad;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.3;
+}
+.entry-footer a:hover{
+	background:#292929;
+}
 section.error-404.not-found {
 
     text-align: center;
@@ -3137,7 +2977,16 @@ li.comment.depth-1 {
 
 }
 
+.navigation.post-navigation {3
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 70px;
+    margin-top: 70px;
+    float: left;
+    width: 100%;
+    clear: both;
 
+}
 
 .nav-links .nav-previous,
 
@@ -3165,7 +3014,36 @@ li.comment.depth-1 {
 
 }
 
-
+.related-post{
+    clear: both;
+    overflow: hidden;
+    padding-top: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.related-post h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+} 
+.related-post .catagories .tags-links a {
+    margin-right: 10px;
+    float: left;
+}
+.related-post .catagories .cat-links {
+    width: 100%;
+    float: left;
+}
+.related-post .catagories {
+    margin-bottom: 10px;
+    float: left;
+}
+.related-post .bloge-post-wrapper {
+    padding-bottom: 0;
+    border: 1px solid #cccccc;
+}
+.related-post .content-wrap{
+	padding:15px;
+}
 
 #comments,
 
