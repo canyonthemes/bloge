@@ -89,6 +89,10 @@ if ( !function_exists('bloge_default_theme_options') ) :
             'bloge-layout'           =>'right-sidebar',
             'bloge-font-family-url'  =>esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
             'bloge-font-family-name' => esc_html__('Poppins, sans-serif','bloge'),
+
+            'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
+            'bloge-heading-font-family-name'=> esc_html__('Poppins, sans-serif','bloge'),
+            
             'bloge-footer-totop'     => 1, 
 			'bloge-read-more-text' => esc_html__('Continue Reading','bloge'),
 			'bloge-header-social' => 0,
