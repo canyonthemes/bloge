@@ -43,29 +43,25 @@ if (!function_exists('bloge_related_post_below')) :
             );
             $bloge_plus_featured_query = new WP_Query($bloge_plus_cat_post_args);
             ?>
-            <div class="related-post news-block">
-                <header class="entry-header">
-                    <h2 class="entry-title">
-                        <?php esc_html_e('Related Posts', 'bloge') ?>
-                    </h2>
-                </header>
+            <div class="related-posts">
+                <h2><?php esc_html_e('Related Posts', 'bloge') ?></h2>
                 <div class="row">
                     <?php
                     while ($bloge_plus_featured_query->have_posts()) :
                         $bloge_plus_featured_query->the_post(); ?>
-                         <article class="col-sm-6 id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
-                                <div class="bloge-post-wrapper <?php if ( !has_post_thumbnail () ) { echo "no-feature-image"; } ?>">
+                         <div class="col-sm-6 id="post-<?php the_ID(); ?>" <?php post_class(); ?>">
+                                <div class="related-wrapper <?php if ( !has_post_thumbnail () ) { echo "no-feature-image"; } ?>">
                                    <!--post thumbnal options-->
                                     <?php if ( has_post_thumbnail () ) 
                                     { ?>
-                                        <div class="bloge-post-thumb post-thumb">
+                                        <div class="related-thumb">
                                             <a href="<?php the_permalink(); ?>">
                                              <?php the_post_thumbnail( 'full' ); ?>
                                             </a>
                                         </div><!-- .post-thumb-->
-                              <?php } ?>
-                                    <div class="content-wrap">
-                                        <div class="related-header">
+                                    <?php } ?>
+                                    <div class="related-content-wrapper">
+                                        <header class="related-header">
                                             <?php
                                             if ( is_single() ) :
                                                
@@ -73,11 +69,11 @@ if (!function_exists('bloge_related_post_below')) :
                                             else :
                                                 the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
                                             endif; ?>
-                                        </div><!-- .entry-header -->
-                                        <div class="date"><?php the_date(); ?></div>
+                                        </header>
+                                        <div class="related-meta"><span><?php the_date(); ?></span></div>
                                     </div>
                                 </div>
-                        </article><!-- #post-## -->
+                        </div><!-- #post-## -->
                     <?php endwhile;
                     wp_reset_postdata();
                     ?>

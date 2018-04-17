@@ -9,66 +9,42 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<div class="bloge-post-wrapper">
-
 		<div class="row reletive">
-
 			<!--post thumbnal options-->
-
 			<div class="bloge-post-thumb post-thumb">
-
 				<a href="<?php the_permalink(); ?>">
-
 				 <?php the_post_thumbnail( 'full' ); ?>
-
 				</a>
 
 			</div><!-- .post-thumb-->
-
 			<div class="col-sm-12 post-meta-wrapper">
-
 				<?php
-
 				if ( 'post' === get_post_type() ) : ?>
-
 					<div class="entry-meta">
-
 						<?php bloge_posted_on(); ?>
-
 					</div><!-- .entry-meta -->
-
 				<?php
-
 				endif; ?>
-
 			</div>
-
 		</div>
-
-
 
 		<div class="row">
 
 				<div class="col-sm-10 col-sm-offset-1">
-
-					<div class="entry-header">
-
+					<div class="post-meta">
+						<?php the_category(''); ?>
+					</div>
+					<header class="entry-header">
 						<?php
-
 						if ( is_single() ) :
-
 							the_title( '<h1 class="entry-title">', '</h1>' );
-
 						else :
-
 							the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-
 						endif; ?>
+					</header><!-- .entry-header -->
 
-					</div><!-- .entry-header -->
-
-
+					
 
 					<div class="entry-content">
 
@@ -98,11 +74,7 @@
 
 					</div><!-- .entry-content -->
 
-					<footer class="entry-footer">
-
-						<?php bloge_entry_footer(); ?>
-
-					</footer><!-- .entry-footer -->
+					
 
 				</div>
 
