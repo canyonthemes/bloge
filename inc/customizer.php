@@ -99,10 +99,12 @@ if ( !function_exists('bloge_default_theme_options') ) :
 			'bloge-header-search' =>0,
 			'bloge-header-top-enable' =>0,
 			'bloge-header-date' => 0,
-			'bloge-sticky-sidebar-option' => 1,
+
 			'bloge-slider-read-more' => esc_html__('Read More','bloge'),
             'bloge-exclude-slider-category'=>'',
             'bloge-blog-pagination-type-options' => 'default',
+            'bloge-sticky-sidebar-options' => 1, 
+            'bloge-meta-options'           => 1,
 );
         return apply_filters( 'bloge_default_theme_options', $default_theme_options );
     }

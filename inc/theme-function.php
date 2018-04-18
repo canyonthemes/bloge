@@ -112,7 +112,7 @@ endif;
 
   global $bloge_theme_options;
   $bloge_theme_options  = bloge_get_theme_options();
-	$showpost = $bloge_theme_options['bloge-exclude-slider-category'];	
+	$showpost = $bloge_theme_options['bloge-exclude-slider-category'];
 if( $showpost != 1 )
 {
  if (!function_exists('bloge_exclude_category_in_blog_page')) :

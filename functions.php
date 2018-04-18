@@ -157,8 +157,10 @@ add_action( 'widgets_init', 'bloge_widgets_init' );
 function bloge_scripts() {
 	/*google font  */
 	global $bloge_theme_options;
-	
+	$sticky_sidebar_options = $bloge_theme_options['bloge-sticky-sidebar-options'];
+
 	$font_family_url = esc_url($bloge_theme_options['bloge-font-family-url']);
+
 	if(!empty($font_family_url)):
 	wp_enqueue_style( 'bloge-googleapis', $font_family_url, array(), null, false, 'all' );
     endif;
@@ -203,10 +205,9 @@ function bloge_scripts() {
 	wp_enqueue_script( 'bloge-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '4.5.0' );
 	
 	/*Sticky Sidebar*/
-	$bloge_sticky_sidebar = $bloge_theme_options['bloge-sticky-sidebar-option'];
-	if( $bloge_sticky_sidebar == 1 ){
-	 wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/assets/framework/sticky-sidebar/theia-sticky-sidebar.js', array('jquery'), '4.5.0' );
-	} 
+	if( 1 == $sticky_sidebar_options  ){ 
+	wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/assets/framework/sticky-sidebar/theia-sticky-sidebar.js', array('jquery'), '4.5.0' );
+	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -262,3 +263,9 @@ require get_template_directory() . '/inc/hooks/footer.php';
  * Load hooks files
 */
 require get_template_directory() . '/inc/hooks/related-posts.php';
+
+/**
+ * Load hooks files
+*/
+require get_template_directory() . '/inc/hooks/meta-options.php';
+

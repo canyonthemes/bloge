@@ -33,15 +33,13 @@ global $bloge_theme_options;
 				    }
 				?>
 			</div><!-- .post-thumb-->
-			<div class="col-sm-12 post-meta-wrapper">
-				<?php
-				if ( 'post' === get_post_type() ) : ?>
-					<div class="entry-meta">
-						<?php bloge_posted_on(); ?>
-					</div><!-- .entry-meta -->
-				<?php
-				endif; ?>
-			</div>
+			<?php
+			/**
+			 * Hook - bloge_doctype.
+			 *
+			 * @hooked bloge_doctype_action - 10
+			 */
+			do_action('bloge_meta_section_action'); ?>
 		</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">

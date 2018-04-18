@@ -15,18 +15,12 @@
 		<div class="authorinfo">
 
 			<?php
-
-			if ( 'post' === get_post_type() ) : ?>
-
-				<div class="entry-meta">
-
-					<?php bloge_posted_on(); ?>
-
-				</div><!-- .entry-meta -->
-
-				<?php
-
-			endif; ?>
+					/**
+					 * Hook - bloge_doctype.
+					 *
+					 * @hooked bloge_doctype_action - 10
+					 */
+					do_action('bloge_meta_section_action'); ?>
 
 		</div>
 
@@ -50,17 +44,15 @@
 
 		</div><!-- .entry-summary -->
 
-
-
-		<footer class="entry-footer">
-
-			<?php bloge_entry_footer(); ?>
-
-		</footer><!-- .entry-footer -->
+		<?php 
+		/**
+		 * Hook - bloge_doctype.
+		 *
+		 * @hooked bloge_doctype_action - 10
+		 */
+		do_action('bloge_footer_meta_section_action'); ?>
 
 	</div>
-
-
 
 </article><!-- #post-## -->
 

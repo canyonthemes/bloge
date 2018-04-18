@@ -25,9 +25,10 @@
 
 
 
-    /*copyright*/
+    /*Go to Top*/
 
-    $wp_customize->add_setting( 'bloge_theme_options[bloge-footer-totop]', array(
+    $wp_customize->add_setting( 'bloge_theme_options[bloge-footer-totop]', 
+        array(
         'capability'        => 'edit_theme_options',
         'default'           => $defaults['bloge-footer-totop'],
         'sanitize_callback' => 'bloge_sanitize_checkbox'
