@@ -3,7 +3,7 @@
     jQuery(document).ready(function() {
 	 var top_news = jQuery('#main-slider');
 		top_news.show().owlCarousel({
-			items : 1,
+			items : 2,
 			singleItem : true,
 			responsive: true,
 			navigation : true,

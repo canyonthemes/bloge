@@ -6,6 +6,7 @@
  *
  * @package bloge
  */
+get_header();
 ?>
 	<section id="primary" class="content-area text-center col-sm-12 col-md-12">
 		<main id="main" class="site-main" role="main">

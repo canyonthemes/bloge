@@ -263,10 +263,10 @@ if ( ! function_exists( 'bloge_header_slider_action' ) ) :
 			<section  class="owl-wrapper clearfix">
 				<div class="container">
 					<div id="main-slider">
-					<?php if(is_home() || is_front_page () ) {
-						 bloge_slider_images_selection();
-						}
-					?>
+						<?php if(is_home() || is_front_page () ) {
+							 bloge_slider_images_selection();
+							}
+						?>
 					</div>
 				</div>
 			</section>
