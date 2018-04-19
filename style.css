@@ -3776,6 +3776,24 @@ article.format-quote .entry-header::after {
     .post .detail-wrap .entry-header h2.entry-title a {
         font-size: 16px;
     }
+    #main-slider .feature-description figcaption{
+        top:50%;
+    }
+    #main-slider .feature-description figcaption{
+        width:100%;
+    }
+    #main-slider .feature-description figcaption .read-more{
+        margin:5px 0;
+    }
+    .bloge-post-wrapper .entry-header,
+    .bloge-post-wrapper .entry-content,
+    .bloge-post-wrapper .entry-footer{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .post-meta-wrapper{
+        padding:15px 30px;
+    }
 }
 
 @media screen and (max-width: 600px) {
