@@ -21,6 +21,7 @@ if( 'left-sidebar' == $designlayout ){
 ?>
 	<div id="primary" class="content-area col-sm-8 col-md-8 col-xs-12 <?php echo esc_attr( $side_col) ;?>">
 		<main id="main" class="site-main" role="main">
+			<!-- <div id="masonry-loop"> -->
 		<?php
 		if ( have_posts() ) :
 
@@ -32,6 +33,7 @@ if( 'left-sidebar' == $designlayout ){
 			endif;
 
 			/* Start the Loop */
+
 
 			while ( have_posts() ) : the_post();
 				/*
@@ -54,7 +56,7 @@ if( 'left-sidebar' == $designlayout ){
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
+<!-- </div> -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

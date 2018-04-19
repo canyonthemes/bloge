@@ -198,6 +198,8 @@ function bloge_scripts() {
 	
 	/*Fancybox*/
     wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/framework/fancybox/js/jquery.fancybox.pack.js', array('jquery'), '4.5.0' );
+
+    wp_enqueue_script( 'masonry' );
 	
 	/*Custom JS*/
 	wp_enqueue_script( 'bloge-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '4.5.0' );

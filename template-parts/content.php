@@ -9,7 +9,7 @@
  global $bloge_theme_options;
   $bloge_read_more = esc_html( $bloge_theme_options['bloge-read-more-text'] );
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('boxed'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('boxed masonry-entry'); ?>>
 	<div class="bloge-post-wrapper">
 		<div class="row reletive">
 			<!--post thumbnal options-->

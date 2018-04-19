@@ -137,3 +137,54 @@ global $bloge_theme_options;
 
 </article><!-- #post-## -->
 
+<article id="post-<?php the_ID(); ?>" <?php post_class('boxed'); ?>>
+	<div class="bloge-post-wrapper">
+		<div class="post-gallery-section">
+		    <div class="media-wrapper">
+		      	<div class="food-col-left col-md-8 col-sm-8 col-xs-12">
+		          <div class="col-md-12 col-sm-12 col-xs-12">
+		            <div class="media-item">
+		              <div class="media-item-inner">
+		                <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg" alt="">
+		              </div>
+		            </div>
+		          </div>
+		          <div class="clearfix"></div>
+		          <div class="col-md-6 col-sm-6 col-xs-12">
+		            <div class="media-item">
+		              <div class="media-item-inner">
+		                <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg" alt="">
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-6 col-sm-6 col-xs-12">
+		            <div class="media-item">
+		              <div class="media-item-inner">
+		                <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg">
+		              </div>
+		            </div>
+		          </div>
+		      	</div>
+
+		      	<div class="food-col-right col-md-4 col-sm-4 col-xs-12">
+			        <div class="media-item">
+			          <div class="media-item-inner">
+			            <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg">
+			          </div>
+			        </div>
+			        <div class="media-item">
+			          <div class="media-item-inner">
+			            <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg">
+			          </div>
+			        </div>
+			        <div class="media-item">
+			          <div class="media-item-inner">
+			            <img class="img-responsive" src="http://demo.canyonthemes.com/bloge/wp-content/uploads/sites/14/2017/11/men-2425121_12801.jpg">
+			          </div>
+			        </div>
+		      	</div>
+		  	</div>
+		</div>
+	</div>
+</article>
+
