@@ -87,11 +87,11 @@ if ( !function_exists('bloge_default_theme_options') ) :
             'bloge-promo-cat'        => 0,
             'bloge-footer-copyright' => esc_html__('&copy; All Right Reserved','bloge'),
             'bloge-layout'           =>'right-sidebar',
-            'bloge-font-family-url'  =>esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
-            'bloge-font-family-name' => esc_html__('Poppins, sans-serif','bloge'),
+            'bloge-font-family-url'  =>esc_url('//fonts.googleapis.com/css?family=Open+Sans:300,400', 'bloge'),
+            'bloge-font-family-name' => esc_html__('Open Sans, sans-serif','bloge'),
 
-            'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
-            'bloge-heading-font-family-name'=> esc_html__('Poppins, sans-serif','bloge'),
+            'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i', 'bloge'),
+            'bloge-heading-font-family-name'=> esc_html__('Merriweather, serif','bloge'),
             
             'bloge-footer-totop'     => 1, 
 			'bloge-read-more-text' => esc_html__('Continue Reading','bloge'),

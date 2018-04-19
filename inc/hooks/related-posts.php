@@ -44,7 +44,7 @@ if (!function_exists('bloge_related_post_below')) :
             $bloge_plus_featured_query = new WP_Query($bloge_plus_cat_post_args);
             ?>
             <div class="related-posts">
-                <h2><?php esc_html_e('Related Posts', 'bloge') ?></h2>
+                <h4><?php esc_html_e('Related Posts', 'bloge') ?></h4>
                 <div class="row">
                     <?php
                     while ($bloge_plus_featured_query->have_posts()) :
