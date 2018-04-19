@@ -153,7 +153,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 								?></span>
 						</div>
 					</div>
-					<div class="col-sm-7">
+					<div class="col-sm-6">
 						<div class="logo-header-inner col-sm-12">
 		                   <?php
 		                      if (has_custom_logo()) { ?>
@@ -181,7 +181,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 		                 <?php } ?>   
 						</div>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						<div class="social-links">
 							<?php 
 							if (has_nav_menu('social') && $bloge_header_social == 1 )
@@ -222,7 +222,7 @@ if ( ! function_exists( 'bloge_header_lower_section' ) ) :
             	<div class="navbar-header">
                     <!-- Toggle Button -->    	
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    	<span class="icon-bar"><?php _e('Toggle navigation', 'bloge');?></span>
+                    	<span class="sr-only"><?php _e('Toggle navigation', 'bloge');?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
