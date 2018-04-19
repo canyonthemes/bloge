@@ -12,6 +12,7 @@ global $bloge_theme_options;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('boxed'); ?>>
 	<div class="bloge-post-wrapper">
+		<div class="reletive">
 		<?php
 
         if ( ! is_single() && get_post_gallery() )
@@ -73,9 +74,20 @@ global $bloge_theme_options;
 			              </div>
 			            </div>
 			          </div>
-               <?php } $count++; } ?>     
+               		<?php } $count++; } ?>     
+				</div>
 			</div>
   		<?php } ?>
+  		<div class="col-sm-12 post-meta-wrapper">
+			<?php
+			if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php bloge_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php
+			endif; ?>
+		</div>
+  	</div>
 
   		<div class="row">
 		    <div class="col-sm-10 col-sm-offset-1">

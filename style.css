@@ -1221,9 +1221,13 @@ object {
 }
 .post-gallery-section{
     padding:30px;
+    display:inline-block;
 }
 .post-gallery-section [class*="col-"]{
     padding:0;
+}
+.post-gallery-section .media-item {
+    padding: 2px;
 }
 .post-gallery-section .media-wrapper .media-item img {
     width: 100%;
