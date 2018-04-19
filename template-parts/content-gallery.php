@@ -21,22 +21,19 @@ global $bloge_theme_options;
 			       <?php $gallery =get_post_gallery ( get_the_ID(), false );
                     $count=0;
                       foreach ( $gallery['src'] AS $src ) {
-                      
                       if($count ==0 )
                        {
 				   ?> 
 
-					      	<div class="food-col-left col-md-8 col-sm-8 col-xs-12">
-					        
-					          <div class="col-md-12 col-sm-12 col-xs-12">
-					            <div class="media-item">
-					              <div class="media-item-inner">
-					                <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
-					              </div>
-					            </div>
-					          </div>
-		                	</div>
-                
+				      	<div class="food-col-left col-md-8 col-sm-8 col-xs-12">
+				          <div class="col-md-12 col-sm-12 col-xs-12">
+				            <div class="media-item">
+				              <div class="media-item-inner">
+				                <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+				              </div>
+				            </div>
+				          </div>
+	                	</div>
 	                <?php
 
 	                    }
@@ -49,7 +46,7 @@ global $bloge_theme_options;
 	                     if ( $count == 1 || $count == 2)  {
 	                   
 	                     ?>
-                    	   <div class="media-item">
+                    	<div class="media-item">
 				          <div class="media-item-inner">
 				            <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>">
 				          </div>
@@ -76,12 +73,36 @@ global $bloge_theme_options;
 			              </div>
 			            </div>
 			          </div>
-           
                <?php } $count++; } ?>     
-			  	
 			</div>
+  		<?php } ?>
 
-  <?php } ?>		
-	</div>
+  		<div class="row">
+		    <div class="col-sm-10 col-sm-offset-1">
+			    <div class="entry-header">
+					<?php
+					if ( is_single() ) :
+					the_title( '<h1 class="entry-title">', '</h1>' );
+					else :
+					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					endif; ?>
+			    </div><!-- .entry-header -->
+			    <div class="entry-content">
+				     <?php 
+				      $content = get_the_content();
+				      $trimmed_content = wp_trim_words( $content, 60); 
+				     ?>
+				     <p><?php echo esc_html( $trimmed_content ) ; ?></p> 
+			    </div><!-- .entry-content -->
+			    <div class="entry-footer">
+					<div class="row">
+						<div class="col-sm-6 col-md-6 more-area text-left">
+							<a href="<?php the_permalink(); ?>">
+							<?php echo $bloge_read_more; ?>  <i class="fa fa-angle-double-right"></i></a>
+						</div>
+					</div>
+			    </div>
+		   </div>
+  		</div>		
 </article>
 
