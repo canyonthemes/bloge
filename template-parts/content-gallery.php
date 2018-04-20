@@ -30,7 +30,9 @@ global $bloge_theme_options;
 				          <div class="col-md-12 col-sm-12 col-xs-12">
 				            <div class="media-item">
 				              <div class="media-item-inner">
-				                <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+				              	   <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>"> 
+				                      <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+				                    </a>  
 				              </div>
 				            </div>
 				          </div>
@@ -49,7 +51,9 @@ global $bloge_theme_options;
 	                     ?>
                     	<div class="media-item">
 				          <div class="media-item-inner">
-				            <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>">
+				             <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>">  
+				              <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>">
+				           </a>
 				          </div>
 				        </div>
 				    <?php  if ( $count == 2)  { ?>
@@ -70,7 +74,9 @@ global $bloge_theme_options;
 			           
 			            <div class="media-item">
 			              <div class="media-item-inner">
-			                <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+			              	<a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>"> 
+			                   <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+			                </a>
 			              </div>
 			            </div>
 			          </div>

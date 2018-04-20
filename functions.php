@@ -85,6 +85,19 @@ function bloge_setup() {
 endif;
 add_action( 'after_setup_theme', 'bloge_setup' );
 
+
+/*
+	 * Custom Logo implemeted from WordPress Core
+	 */
+
+	add_theme_support( 'custom-logo', array(
+            'height'      => 70,
+            'width'       => 290,
+            'flex-height' => true,
+            'flex-width' => true
+        ) );
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
