@@ -97,7 +97,7 @@ if (!function_exists('bloge_go_to_top')) :
 if ( ! function_exists( 'bloge_date_display' ) ) :
 
     function bloge_date_display( $format = 'l, F j, Y') {
-        echo date_i18n(get_option('date_format'));
+        echo '<span><i class="fa fa-calendar"></i>'. date_i18n(get_option('date_format'));
     }
 endif;
 
