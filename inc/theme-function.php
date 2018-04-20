@@ -78,7 +78,7 @@ if (!function_exists('bloge_go_to_top')) :
     function bloge_go_to_top()
     {
         ?>
-        <a id="toTop" href="#" title="<?php esc_attr_e('Go to Top', 'bloge'); ?>">
+        <a id="toTop" href="#" class="scrolltop" title="<?php esc_attr_e('Go to Top', 'bloge'); ?>">
             <i class="fa fa-angle-double-up"></i>
         </a>
     <?php
@@ -157,7 +157,7 @@ if ( !function_exists('bloge_posts_navigation') ) :
             the_posts_navigation();
         }
         else{
-            echo"<div class='candid-pagination'>";
+            echo"<div class='pagination'>";
             global $wp_query;
             $big = 999999999; // need an unlikely integer
             echo paginate_links(array(

@@ -84,15 +84,6 @@ global $bloge_theme_options;
 				</div>
 			</div>
   		<?php } ?>
-  		<div class="col-sm-12 post-meta-wrapper">
-			<?php
-			if ( 'post' === get_post_type() ) : ?>
-				<div class="entry-meta">
-					<?php bloge_posted_on(); ?>
-				</div><!-- .entry-meta -->
-			<?php
-			endif; ?>
-		</div>
   	</div>
 
   		<div class="row">

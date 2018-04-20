@@ -21,14 +21,27 @@
 		            e.preventDefault();
 		        });
 	    	}
-	    	    //Click event to scroll to top
-	    		jQuery('#toTop').click(function($){
-	    			jQuery('html, body').animate({scrollTop : 0},800);
-	    			return false;
-	    		});			
-				//fancybox
-				jQuery('.fancybox').fancybox();			
-				//sticky sidebar
+    	    //Click event to scroll to top
+    		//Check to see if the window is top if not then display button
+			jQuery(window).scroll(function($){
+				if (jQuery(this).scrollTop() > 100) {
+					jQuery('.scrolltop').addClass('activetop');
+					jQuery('.scrolltop').fadeIn();
+				} else {
+					jQuery('.scrolltop').fadeOut();
+				}
+			});
+			
+			//Click event to scroll to top
+			jQuery('.scrolltop').click(function($){
+				jQuery('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+
+			//fancybox
+			jQuery('.fancybox').fancybox();	
+					
+			//sticky sidebar
 		    var at_body = jQuery("body");
 		    var at_window = jQuery(window);
 
@@ -51,5 +64,7 @@
 		            itemSelector: '.masonry-entry'
 		        });
 		    });
+		    
     });
+
 })(jQuery);
