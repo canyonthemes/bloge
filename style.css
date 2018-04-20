@@ -1879,7 +1879,19 @@ h1.site-title {
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
 }
-
+.top-header li ul li ul li a,
+.top-header li ul li a{
+    color:#fff;
+}
+.top-header li.menu-item-has-children > a::before {
+    position: absolute;
+    content: '\f107';
+    right: -15px;
+    line-height: 24px;
+    font-size: 12px;
+    font-family: 'FontAwesome';
+    top: 5px;
+}
 .top-header .menu-item-has-children:hover .sub-menu {
     display: block;
 }
@@ -2008,7 +2020,9 @@ h1.site-title {
 .header-date span {
     line-height: 75px;
 }
-
+.header-date span i{
+    margin-right: 5px;
+}
 
 /*-----# Top Social -----------*/
 
@@ -2715,10 +2729,13 @@ li.comment.depth-1 {
 .widget .featured-post-title a {
     color: #333;
     margin-top: 0;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
 }
-
+.widget .featured-post-title em{
+    font-weight: 300;
+}
 
 /* Make sure select elements fit in widgets. */
 
@@ -3314,7 +3331,7 @@ footer {
     position: absolute;
     top: 0;
     right: 0px;
-    padding: 10px 20px;
+    padding: 11px 20px;
 }
 
 
