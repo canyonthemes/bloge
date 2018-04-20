@@ -70,7 +70,7 @@ if (!function_exists('bloge_related_post_below')) :
                                                 the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
                                             endif; ?>
                                         </header>
-                                        <div class="related-meta"><span><?php the_date(); ?></span></div>
+                                        <div class="related-meta"><span><?php echo get_the_date(); ?></span></div>
                                     </div>
                                 </div>
                         </div><!-- #post-## -->
