@@ -146,7 +146,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="header-date">
-							<span><?php 
+							<span><i class="fa fa-calendar"></i> <?php 
 								if( $bloge_header_date == 1 ):
 								 bloge_date_display(); 
 								endif;

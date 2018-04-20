@@ -424,11 +424,6 @@ hr {
     margin-bottom: 1.5em;
 }
 
-ul,
-ol {
-    margin: 0 0 1.5em 3em;
-}
-
 ul {
     list-style: disc;
 }
@@ -441,6 +436,7 @@ li > ul,
 li > ol {
     margin-bottom: 0;
     margin-left: 1.5em;
+    padding-left: 10px;
 }
 
 dt {
@@ -1221,9 +1217,13 @@ object {
 }
 .post-gallery-section{
     padding:30px;
+    display:inline-block;
 }
 .post-gallery-section [class*="col-"]{
     padding:0;
+}
+.post-gallery-section .media-item {
+    padding: 2px;
 }
 .post-gallery-section .media-wrapper .media-item img {
     width: 100%;
@@ -1875,7 +1875,19 @@ h1.site-title {
     -ms-transition: all 500ms ease;
     -o-transition: all 500ms ease;
 }
-
+.top-header li ul li ul li a,
+.top-header li ul li a{
+    color:#fff;
+}
+.top-header li.menu-item-has-children > a::before {
+    position: absolute;
+    content: '\f107';
+    right: -15px;
+    line-height: 24px;
+    font-size: 12px;
+    font-family: 'FontAwesome';
+    top: 5px;
+}
 .top-header .menu-item-has-children:hover .sub-menu {
     display: block;
 }
@@ -2004,7 +2016,9 @@ h1.site-title {
 .header-date span {
     line-height: 75px;
 }
-
+.header-date span i{
+    margin-right: 5px;
+}
 
 /*-----# Top Social -----------*/
 
@@ -2442,7 +2456,9 @@ section.owl-wrapper {
     line-height: 1.5;
     color: #111111;
 }
-
+.entry-header h2.entry-title a:hover {
+    color: #5a5a5a;
+}
 .entry-header h2.entry-title a em {
     font-weight: 300;
     font-style: italic;
@@ -2523,7 +2539,7 @@ section.owl-wrapper {
     border-radius: 1px;
     box-sizing: border-box;
     padding: 10px 24px;
-    color: #adadad;
+    color: #868686;
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
@@ -2542,8 +2558,21 @@ section.error-404.not-found {
 section.error-404.not-found input.search-field,
 section.no-results.not-found input.search-field {
     padding: 10px;
+    float:left;
 }
-
+.not-found .search-form {
+    max-width: 320px;
+    margin: 0 auto;
+}
+.not-found label {
+    float: left;
+}
+.not-found .search-submit {
+    height: 48px;
+    margin-left: -4px;
+    margin-top: 0px;
+    float: left;
+}
 header.page-header,
 h1.page-title {
     margin-top: 0;
@@ -2711,10 +2740,13 @@ li.comment.depth-1 {
 .widget .featured-post-title a {
     color: #333;
     margin-top: 0;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Merriweather', serif;
 }
-
+.widget .featured-post-title em{
+    font-weight: 300;
+}
 
 /* Make sure select elements fit in widgets. */
 
@@ -2725,6 +2757,29 @@ li.comment.depth-1 {
 .top-footer .widget {
     background: transparent;
     border: 0;
+}
+.top-footer  .widget {
+    box-shadow: none;
+    border: 0;
+    background: #fff;
+    padding:0;
+}
+.top-footer  .widget li::before {
+    content: "\f105";
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 13px;
+    left: 3px;
+    position: absolute;
+    top: 8px;
+}
+.top-footer .widget .widget-title {
+    margin: 0;
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 0;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 
@@ -3310,7 +3365,7 @@ footer {
     position: absolute;
     top: 0;
     right: 0px;
-    padding: 10px 20px;
+    padding: 11px 20px;
 }
 
 
@@ -3390,123 +3445,56 @@ article.boxed {
     border: 1px solid #efefef;
     background: #fff;
     display:inline-block;
+    width:100%;
 }
 
 
 /* Post Format */
 
-
-/*article.format-standard .entry-header::after {
+article.format-standard .entry-header::after,
+article.format-image .entry-header::after,
+article.hentry.sticky  .entry-header::after,
+article.format-video  .entry-header::after,
+article.format-gallery  .entry-header::after,
+article.format-audio .entry-header::after,
+article.format-quote .entry-header::after{
     content: "\f016";
-	font-size: 20px;
-    color: #888888;
+    font-size: 20px;
+    color: #fff;
     display: inline-block;
     font-family: "fontawesome";
-    left: -35px;
+    left: -38px;
     position: absolute;
     text-align: center;
-    top: 28px;
+    top: 0;
     width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
+    border: 0;
+    border-radius: 0;
     height: 40px;
     line-height: 40px;
+    background: #333;
+}
+
+article.format-standard .entry-header::after {
+    content: "\f016";
 }
 article.format-image .entry-header::after {
     content: "\f03e";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 article.hentry.sticky  .entry-header::after {
     content: "\f097";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 article.format-video  .entry-header::after {
     content: "\f144";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 article.format-gallery  .entry-header::after {
     content: "\f03e";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 article.format-audio .entry-header::after {
     content: "\f001";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 article.format-quote .entry-header::after {
     content: "\f10e";
-	font-size: 20px;
-    color: #888888;
-    display: inline-block;
-    font-family: "fontawesome";
-    left: -35px;
-    position: absolute;
-    text-align: center;
-    top: 28px;
-    width: 40px;
-    border: 1px solid #888888;
-    border-radius: 100%;
-    height: 40px;
-    line-height: 40px;
 }
 
 .post_format-post-format-audio .post-meta-wrapper {
@@ -3519,7 +3507,7 @@ article.format-quote .entry-header::after {
 .post_format-post-format-audio .entry-meta, 
 .post_format-post-format-audio .entry-meta a {
     color: #333;
-}*/
+}
 
 
 /*--------------------------------------------------------------
