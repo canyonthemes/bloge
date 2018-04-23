@@ -14,16 +14,18 @@ class Bloge_Author_Widget extends WP_Widget{
      }   
      public function widget( $args, $instance ){
         if(!empty($instance)){ 
-         $image=$instance['image_uri'];
-         $title = apply_filters( 'widget_title', !empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
-         $description=$instance['description'];
-         $facebook=$instance['facebook'];
-         $twitter=$instance['twitter'];
-         $googleplus=$instance['googleplus'];
-         $instagram=$instance['instagram'];
-         $linkedin=$instance['linkedin'];
-         $youtube=$instance['youtube'];
-          if(!empty($title) || !empty($image) || !empty($description) ){
+         $image       = $instance['image_uri'];
+         $title       = apply_filters( 'widget_title', !empty( $instance['title'] ) ? $instance['title'] : '', $instance, $this->id_base );
+         $description = $instance['description'];
+         $facebook    = $instance['facebook'];
+         $twitter     = $instance['twitter'];
+         $googleplus  = $instance['googleplus'];
+         $instagram   = $instance['instagram'];
+         $linkedin    = $instance['linkedin'];
+         $youtube     = $instance['youtube'];
+
+          if(!empty($title) || !empty($image) || !empty($description) )
+          {
           ?>
               <section  class="widget author-widget">
               <?php echo $args['before_widget']; ?>
@@ -45,7 +47,7 @@ class Bloge_Author_Widget extends WP_Widget{
             // condition to check empty value of social link
             if ( !empty( $user_url ) ) { ?>
                 <li class="facebook">
-                    <a href="<?php echo esc_url( $user_url ); ?>" data-title="Facebook" target="_blank"><i class="fa fa-external-link"></i></a>
+                    <a href="<?php echo esc_url( $user_url ); ?>" data-title="User Url" target="_blank"><i class="fa fa-external-link"></i></a>
                 </li>
             <?php }
             if ( !empty( $facebook ) ) { ?>
@@ -96,16 +98,16 @@ class Bloge_Author_Widget extends WP_Widget{
      }
    } 
      public function update( $new_instance, $old_instance ){
-        $instance = $old_instance;
-        $instance['title'] = sanitize_text_field( $new_instance['title'] );
+        $instance                = $old_instance;
+        $instance['title']       = sanitize_text_field( $new_instance['title'] );
         $instance['description'] = wp_kses_post( $new_instance['description'] );
-        $instance['image_uri'] = esc_url_raw( $new_instance['image_uri'] );
-        $instance['facebook'] = esc_url_raw( $new_instance['facebook'] );
-        $instance['twitter'] = esc_url_raw( $new_instance['twitter'] );
-        $instance['googleplus'] = esc_url_raw( $new_instance['googleplus'] );
-        $instance['instagram'] = esc_url_raw( $new_instance['instagram'] );
-        $instance['linkedin'] = esc_url_raw( $new_instance['linkedin'] );
-        $instance['youtube'] = esc_url_raw( $new_instance['youtube'] );
+        $instance['image_uri']   = esc_url_raw( $new_instance['image_uri'] );
+        $instance['facebook']    = esc_url_raw( $new_instance['facebook'] );
+        $instance['twitter']     = esc_url_raw( $new_instance['twitter'] );
+        $instance['googleplus']  = esc_url_raw( $new_instance['googleplus'] );
+        $instance['instagram']   = esc_url_raw( $new_instance['instagram'] );
+        $instance['linkedin']    = esc_url_raw( $new_instance['linkedin'] );
+        $instance['youtube']     = esc_url_raw( $new_instance['youtube'] );
         return $instance;
      }
      public function form($instance ){
@@ -117,7 +119,7 @@ class Bloge_Author_Widget extends WP_Widget{
                    echo esc_attr($instance['title']);
                   endif;
                   ?>" class="widefat" />
-            </p>
+          </p>
             <p>
                 <label for="<?php echo $this->get_field_id('description'); ?>"><?php _e( 'Author or Ads Description', 'bloge' ); ?></label><br />
                  <textarea  rows="8" name="<?php echo $this->get_field_name('description'); ?>" id="<?php echo $this->get_field_id('description'); ?>"  class="widefat" ><?php
@@ -213,9 +215,3 @@ function bloge_author_widget(){
     register_widget( 'Bloge_Author_Widget' );
 }
 
-add_action( 'admin_enqueue_scripts', 'bloge_widgets_backend_enqueue' ); 
-function bloge_widgets_backend_enqueue(){     
-    wp_register_script( 'bloge-custom-widgets', get_template_directory_uri().'/assets/js/widgets.js', array( 'jquery' ), true );
-    wp_enqueue_media();
-    wp_enqueue_script( 'bloge-custom-widgets' );
-}

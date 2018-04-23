@@ -1,10 +1,10 @@
 /*
 Theme Name: Bloge
-Theme URI: 
+Theme URI: https://www.canyonthemes.com/themes/bloge
 Author: canyonthemes
 Author URI: https://www.canyonthemes.com/
 Description: Bloge is a simple and easy to use, modern and creative, user friendly and elegant, WordPress theme for blog, news and magazine sites. It is responsive, cross browser compatible, SEO friendly theme with lots of highly created features. Theme comes with beautiful slider section, featured post column, footer options, sidebar options, site design options and many more. It is very light weighted theme based on customizer. Added custom widgets for author information and advertisement will make your site awesome. Try Bloge today and blog away. Our dedicated support team will guide you in every steps while using theme.
-Version: 0.0.1
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bloge
@@ -3113,7 +3113,7 @@ Related Posts
 
 /* Footer starts */
 
-.site-footer {
+.top-footer-widget {
     background: #ffffff;
     padding-bottom: 0px;
     border-top: 1px solid #e0e0e0;
@@ -3196,6 +3196,7 @@ footer {
 
 
 /* Footer links */
+
 
 .social-menu-wrap {
     text-align: center;
@@ -3630,6 +3631,30 @@ article.boxed {
     color: #fff;
 }
 
+.blog .format-quote .bloge-post-thumb p {
+    padding-left: 66px;
+    font-family: "Merriweather", Georgia, serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: #797979;
+    border: 0;
+    margin: 0;
+}
+
+
+.blog .format-quote .bloge-post-thumb p:before {
+    content: "\f10d";
+    float: left;
+    margin-left: -35px;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-size: 22px;
+    line-height: 1.33;
+    color: #82af7c;
+    opacity: 0.88;
+}
+
 
 /* Media css starts */
 
@@ -3743,6 +3768,15 @@ article.boxed {
         min-height: inherit;
     }
 }
+
+
+.top-footer .widget.widget_search form input[type="submit"] {
+    position: absolute;
+    top: 0;
+    left: 171px;
+    padding: 11px 20px;
+}
+
 
 
 /* Media css ends */

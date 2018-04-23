@@ -1,5 +1,6 @@
 <?php
 
+
 /**
 * Select Images according to Category saved.
 * @since Bloge 1.0.0
@@ -12,7 +13,6 @@ if ( !function_exists('bloge_slider_images_selection') ) :
   function bloge_slider_images_selection() 
   { 
         global $bloge_theme_options;
-
 
         $category_id = $bloge_theme_options['bloge-feature-cat'];
                      
@@ -29,7 +29,7 @@ if ( !function_exists('bloge_slider_images_selection') ) :
               {
 
                    $image_id = get_post_thumbnail_id();
-                   $image_url = wp_get_attachment_image_src($image_id,'',true);
+                   $image_url = wp_get_attachment_image_src( $image_id,'',true );
                    ?>
                   <div class="feature-area">
                       <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($image_url[0]);?>" alt=""></a>
@@ -175,15 +175,39 @@ endif;
 add_action( 'bloge_action_navigation', 'bloge_posts_navigation', 10 );
 
 
-/**
- * Sanitize checkbox field
- *
- *  @since Bloge 1.0.0
- */
-if (!function_exists('bloge_sanitize_checkbox')) :
-    function bloge_sanitize_checkbox($checked)
-    {
-        // Boolean check.
-        return ((isset($checked) && true == $checked) ? true : false);
-    }
+
+
+/*
+* Remove [...] from default fallback excerpt content
+*
+*/
+function placid_excerpt_more( $more ) {
+  if(is_admin())
+  {
+    return $more;
+  }
+  return '...';
+}
+add_filter( 'excerpt_more', 'placid_excerpt_more');
+
+
+
+if (!function_exists('bloge_widgets_backend_enqueue')) : 
+function bloge_widgets_backend_enqueue($hook){  
+
+  if ( 'widgets.php' != $hook )
+   {
+            return;
+        
+   }
+
+    wp_register_script( 'bloge-custom-widgets', get_template_directory_uri().'/assets/js/widgets.js', array( 'jquery' ), true );
+    wp_enqueue_media();
+    wp_enqueue_script( 'bloge-custom-widgets' );
+}
+
+add_action( 'admin_enqueue_scripts', 'bloge_widgets_backend_enqueue' );
+
 endif;
+
+

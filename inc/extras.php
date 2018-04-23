@@ -26,7 +26,8 @@ function bloge_body_classes( $classes ) {
 
 // Add design layout of sidebar
 	global $bloge_theme_options;
-    $designlayout = $bloge_theme_options['bloge-layout'];
+    $bloge_theme_options    = bloge_get_theme_options();
+    $designlayout = esc_attr($bloge_theme_options['bloge-layout']);
 	$classes[]    = $designlayout;
 	return $classes;
 }

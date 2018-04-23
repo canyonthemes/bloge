@@ -12,7 +12,7 @@ if (!function_exists('bloge_dynamic_css')) :
  function bloge_dynamic_css()
     {
    global $bloge_theme_options;
-        $bloge_font_family = $bloge_theme_options['bloge-font-family-name'];    
+        $bloge_font_family = esc_attr( $bloge_theme_options['bloge-font-family-name'] );    
         $custom_css = '';
         /* Typography Section */
 

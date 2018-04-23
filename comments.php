@@ -16,6 +16,7 @@
  * return early without loading the comments.
  */
 if ( post_password_required() ) {
+	
 	return;
 }
 ?>

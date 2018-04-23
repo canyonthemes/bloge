@@ -12,16 +12,22 @@
  * @package bloge
  */
 get_header();
+
 global $bloge_theme_options;
+
 $designlayout = $bloge_theme_options['bloge-layout'];
+
 $side_col = 'right-s-bar ';
+
+
 if( 'left-sidebar' == $designlayout ){
+
 	$side_col = 'left-s-bar';
 }
 ?>
 	<div id="primary" class="content-area col-sm-8 col-md-8 col-xs-12 <?php echo esc_attr( $side_col) ;?>">
 		<main id="main" class="site-main" role="main">
-			<!-- <div id="masonry-loop"> -->
+
 		<?php
 		if ( have_posts() ) :
 

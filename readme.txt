@@ -5,7 +5,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-menu,
 
 Requires at least: 4.4
 Tested up to: 4.9.4
-Stable tag: 0.0.1
+Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,12 @@ Bloge is a simple and easy to use, modern and creative, user friendly and elegan
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+## 0.0.1 - April 23 2018 ##
+* Minor Design Changed
+* Managed codes using hooks
+* Options added for pagination 
+* Reviewers issues fixed
+
 ## 0.0.1 - March 19 2018 ##
 * Submitted to WordPress
 

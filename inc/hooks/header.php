@@ -100,12 +100,13 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 <header role="header">
 	<?php
 	global $bloge_theme_options;
-	$bloge_theme_options  = bloge_get_theme_options();
-	$bloge_header_top_enable = $bloge_theme_options['bloge-header-top-enable'];
-	$bloge_header_search = $bloge_theme_options['bloge-header-search'];
-	$bloge_header_date = $bloge_theme_options['bloge-header-date'];
-	$bloge_header_social = $bloge_theme_options['bloge-header-social'];
-	if($bloge_header_top_enable == 1 ): 
+	$bloge_theme_options        = bloge_get_theme_options();
+	$bloge_header_top_enable    = $bloge_theme_options['bloge-header-top-enable'];
+	$bloge_header_search        = $bloge_theme_options['bloge-header-search'];
+	$bloge_header_date          = $bloge_theme_options['bloge-header-date'];
+	$bloge_header_social        = $bloge_theme_options['bloge-header-social'];
+	
+	if( $bloge_header_top_enable == 1 ):
 	?>
 		<div class="top-header">
 			<div class="container">
@@ -116,8 +117,6 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 								if (has_nav_menu('top'))
 
 							 {
-
-								
 
 								wp_nav_menu( array( 'theme_location' => 'top', 'menu_class
 
@@ -131,7 +130,9 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 						<div class="top-search">
 							<?php 
 							if ($bloge_header_search == 1 ):
+								
 								get_search_form();
+						
 							endif; 
 							?>
 						</div>
@@ -146,9 +147,10 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="header-date">
-							 <?php 
+							<?php 
 								if( $bloge_header_date == 1 ):
-								 bloge_date_display(); 
+									?>
+							<?php bloge_date_display(); 
 								endif;
 								?></span>
 						</div>
@@ -157,7 +159,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 						<div class="logo-header-inner col-sm-12">
 		                   <?php
 		                      if (has_custom_logo()) { ?>
-		                
+		                   
 		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
 		                    	<?php  the_custom_logo();?>
 		                    </a>
@@ -174,7 +176,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 								endif;
 								$description = get_bloginfo( 'description', 'display' );
 								if ( $description || is_customize_preview() ) : ?>
-									<p class="site-description"><?php echo $description; ?></p>
+									<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 									<?php
 								endif; ?>
 		                    </div>
@@ -200,6 +202,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
     }
 	endif;
 add_action( 'bloge_header_section_action', 'bloge_header_section', 10 );
+
 
 /* ----------------------
 * Header Lower section hook of the theme.
@@ -230,10 +233,18 @@ if ( ! function_exists( 'bloge_header_lower_section' ) ) :
                 </div>
                 <div class="navbar-collapse collapse clearfix">
 					<?php 
-						if (has_nav_menu('primary'))
+						if ( has_nav_menu('primary'))
 							{
 								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'navigation ' ) ); 
 							}
+						  else
+						  { ?>
+						  	<ul class="navigation">
+			                    <li class="menu-item">
+			                        <a href="<?php echo esc_url(admin_url( 'nav-menus.php' )); ?> "> <?php esc_html_e('Add a menu','bloge'); ?></a>
+			                    </li>
+			                </ul>
+					<?php }		
 					?>
 				</div><!-- /.navbar-collapse -->
 			</nav>
@@ -258,7 +269,7 @@ if ( ! function_exists( 'bloge_header_slider_action' ) ) :
     function bloge_header_slider_action() {
     	global $bloge_theme_options;
 		$bloge_theme_options  = bloge_get_theme_options();
-		$bloge_category_cat = $bloge_theme_options['bloge-feature-cat'];
+		$bloge_category_cat   = $bloge_theme_options['bloge-feature-cat'];
 		if( $bloge_category_cat > 0 ){ ?>
 			<section  class="owl-wrapper clearfix">
 				<div class="container">
@@ -275,6 +286,7 @@ if ( ! function_exists( 'bloge_header_slider_action' ) ) :
     }
 	endif;
 add_action( 'bloge_header_slider_section_action', 'bloge_header_slider_action', 10 );
+
 
 /* ----------------------
 * Header end wrapper section hook of the theme.

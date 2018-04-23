@@ -7,10 +7,7 @@
  * @package bloge
  */
 get_header();
-$side_col = 'right-s-bar ';
-if( 'left-sidebar' == $designlayout ){
-	$side_col = 'left-s-bar';
-}
+
 ?>
 <div id="primary" class="content-area col-sm-12">
 	<main id="main" class="site-main" role="main">

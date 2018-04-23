@@ -11,6 +11,7 @@ if ( ! function_exists( 'bloge_container_closing' ) ) :
      * @since 1.0.0
      */
     function bloge_container_closing() {
+  
     ?>
     		</div><!-- #row -->
 		</div><!-- #container -->
@@ -31,8 +32,15 @@ if ( ! function_exists( 'bloge_site_footer_start' ) ) :
      *
      * @since 1.0.0
      */
-    function bloge_site_footer_start() { ?>
-	<footer id="colophon" class="site-footer" role="contentinfo">
+    function bloge_site_footer_start() {
+
+    if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) 
+    {
+      $value="top-footer-widget";
+    }
+    
+    ?>
+	<footer id="colophon" class="site-footer <?php echo  $value; ?>" role="contentinfo">
 <?php
     }
 endif;

@@ -17,7 +17,7 @@ if (!class_exists('Bloge_Social_Widget')) :
         function __construct()
         {
             $opts = array(
-                'classname' => 'bloge-menu-social',
+                'classname'   => 'bloge-menu-social',
                 'description' => esc_html__('Social Menu Widget', 'bloge'),
             );
 
@@ -30,10 +30,14 @@ if (!class_exists('Bloge_Social_Widget')) :
         {
             $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
             echo $args['before_widget'];
-            if (!empty($title)) {
+           
+            if (!empty($title))
+             {
                 echo $args['before_title'] . esc_attr( $title ) . $args['after_title'];
-            }
-            if (has_nav_menu('social')) {
+             }
+            
+            if (has_nav_menu('social')) 
+            {
                 wp_nav_menu(array('theme_location' => 'social', 'menu_class' => 'social-menu'));
             }
             echo $args['after_widget'];
@@ -43,7 +47,7 @@ if (!class_exists('Bloge_Social_Widget')) :
          */
         function update($new_instance, $old_instance)
         {
-            $instance = $old_instance;
+            $instance          = $old_instance;
             $instance['title'] = sanitize_text_field($new_instance['title']);
             return $instance;
         }

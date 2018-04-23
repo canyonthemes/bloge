@@ -34,12 +34,12 @@ $wp_customize->add_setting( 'bloge_theme_options[bloge-read-more-text]', array(
 
 $wp_customize->add_control('bloge_theme_options[bloge-read-more-text]',
             array(
-            'label'		=> __( 'Read More Text', 'bloge'),
+            'label'       => __( 'Read More Text', 'bloge'),
             'description' => __('Continue Reading >> default text change section', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-read-more-text]',
-            'type'	  	=> 'text',
-            'priority'  => 10
+            'section'     => 'bloge-site-layout',
+            'settings'    => 'bloge_theme_options[bloge-read-more-text]',
+            'type'        => 'text',
+            'priority'    => 10
          )
     );
 
@@ -52,12 +52,12 @@ $wp_customize->add_setting( 'bloge_theme_options[bloge-exclude-slider-category]'
 
 $wp_customize->add_control('bloge_theme_options[bloge-exclude-slider-category]',
             array(
-            'label'		=> __( 'Exclude Category in Slider', 'bloge'),
+            'label'       => __( 'Exclude Category in Slider', 'bloge'),
             'description' => __('Exclude category by Id. Example, 1, 25, 35', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-exclude-slider-category]',
-            'type'	  	=> 'text',
-            'priority'  => 10
+            'section'     => 'bloge-site-layout',
+            'settings'    => 'bloge_theme_options[bloge-exclude-slider-category]',
+            'type'        => 'text',
+            'priority'    => 10
          )
     );
 
@@ -66,17 +66,17 @@ $wp_customize->add_control('bloge_theme_options[bloge-exclude-slider-category]',
 $wp_customize->add_setting( 'bloge_theme_options[bloge-sticky-sidebar-option]', array(
     'capability'		=> 'edit_theme_options',
     'default'			=> $defaults['bloge-sticky-sidebar-option'],
-    'sanitize_callback' => 'bloge_sanitize_checkbox'
+    'sanitize_callback' => 'sanitize_text_field'
 ) );
 
 $wp_customize->add_control('bloge_theme_options[bloge-sticky-sidebar-option]',
             array(
-            'label'		=> __( 'Enable/Disable Sticky Sidebar', 'bloge'),
+            'label'       => __( 'Enable/Disable Sticky Sidebar', 'bloge'),
             'description' => __('Checked to enable sticky sidebar', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-sticky-sidebar-option]',
-            'type'	  	=> 'checkbox',
-            'priority'  => 10
+            'section'     => 'bloge-site-layout',
+            'settings'    => 'bloge_theme_options[bloge-sticky-sidebar-option]',
+            'type'        => 'checkbox',
+            'priority'    => 10
          )
     );
 
@@ -90,14 +90,12 @@ $wp_customize->add_setting( 'bloge_theme_options[bloge-blog-pagination-type-opti
 
 $wp_customize->add_control('bloge_theme_options[bloge-blog-pagination-type-options]',
             array(
-            'choices'   => $choices,
-            'label'     => __( 'Pagination Type', 'bloge'),
+            'choices'     => $choices,
+            'label'       => __( 'Pagination Type', 'bloge'),
             'description' => __('Select Pagination Type From Below', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-blog-pagination-type-options]',
-            'type'      => 'select',
-            'priority'  => 10
+            'section'     => 'bloge-site-layout',
+            'settings'    => 'bloge_theme_options[bloge-blog-pagination-type-options]',
+            'type'        => 'select',
+            'priority'    => 10
          )
     );
-
-

@@ -8,9 +8,13 @@
  */
 get_header();
 global $bloge_theme_options;
+
 $designlayout = $bloge_theme_options['bloge-layout'];
+
 $side_col = 'right-s-bar ';
+
 if( 'left-sidebar' == $designlayout ){
+	
 	$side_col = 'left-s-bar';
 }
 ?>

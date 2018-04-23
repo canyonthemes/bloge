@@ -14,12 +14,12 @@
         'sanitize_callback' => 'bloge_sanitize_checkbox'
     ) );
     $wp_customize->add_control( 'bloge-header-top-enable', array(
-        'label'     => __( 'Enable Header Top Section', 'bloge' ),
+        'label'       => __( 'Enable Header Top Section', 'bloge' ),
         'description' => __('This section include search and menus', 'bloge'),
-        'section'   => 'bloge-header-option',
-        'settings'  => 'bloge_theme_options[bloge-header-top-enable]',
-        'type'      => 'checkbox',
-        'priority'  => 10
+        'section'     => 'bloge-header-option',
+        'settings'    => 'bloge_theme_options[bloge-header-top-enable]',
+        'type'        => 'checkbox',
+        'priority'    => 10
     ) );
 
     /*Search Option*/
@@ -29,12 +29,12 @@
         'sanitize_callback' => 'bloge_sanitize_checkbox'
     ) );
     $wp_customize->add_control( 'bloge-header-search', array(
-        'label'     => __( 'Enable/Disable Search in Header', 'bloge' ),
+        'label'       => __( 'Enable/Disable Search in Header', 'bloge' ),
         'description' => __('Enable Header Top Section First Above', 'bloge'),
-        'section'   => 'bloge-header-option',
-        'settings'  => 'bloge_theme_options[bloge-header-search]',
-        'type'      => 'checkbox',
-        'priority'  => 10
+        'section'     => 'bloge-header-option',
+        'settings'    => 'bloge_theme_options[bloge-header-search]',
+        'type'        => 'checkbox',
+        'priority'    => 10
     ) );
 
     /*Social Options */

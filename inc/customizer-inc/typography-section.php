@@ -16,11 +16,11 @@
     ) );
 
     $wp_customize->add_control( 'bloge-font-family-url', array(
-        'label'     => __( 'Font Family URL Text', 'bloge' ),
-        'section'   => 'bloge-typography-option',
-        'settings'  => 'bloge_theme_options[bloge-font-family-url]',
-        'type'      => 'url',
-        'priority'  => 10,
+        'label'       => __( 'Font Family URL Text', 'bloge' ),
+        'section'     => 'bloge-typography-option',
+        'settings'    => 'bloge_theme_options[bloge-font-family-url]',
+        'type'        => 'url',
+        'priority'    => 10,
         'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
                 __( 'Insert', 'bloge' ),
                 esc_url('https://www.google.com/fonts'),
@@ -40,11 +40,11 @@
     ) );
 
     $wp_customize->add_control( 'bloge-font-family-name', array(
-        'label'     => __( 'Font Family Name', 'bloge' ),
-        'section'   => 'bloge-typography-option',
-        'settings'  => 'bloge_theme_options[bloge-font-family-name]',
-        'type'      => 'text',
-        'priority'  => 10,
+        'label'       => __( 'Font Family Name', 'bloge' ),
+        'section'     => 'bloge-typography-option',
+        'settings'    => 'bloge_theme_options[bloge-font-family-name]',
+        'type'        => 'text',
+        'priority'    => 10,
         'description' => __( 'Insert Google Font Family Name.', 'bloge' ),
     ) );
 
@@ -57,11 +57,11 @@
     ) );
 
     $wp_customize->add_control( 'bloge-heading-font-family-url', array(
-        'label'     => __( 'Heading Font Family URL Text', 'bloge' ),
-        'section'   => 'bloge-typography-option',
-        'settings'  => 'bloge_theme_options[bloge-heading-font-family-url]',
-        'type'      => 'url',
-        'priority'  => 10,
+        'label'       => __( 'Heading Font Family URL Text', 'bloge' ),
+        'section'     => 'bloge-typography-option',
+        'settings'    => 'bloge_theme_options[bloge-heading-font-family-url]',
+        'type'        => 'url',
+        'priority'    => 10,
         'description' => sprintf('%1$s <a href="%2$s" target="_blank">%3$s</a> %4$s',
                 __( 'Insert', 'bloge' ),
                 esc_url('https://www.google.com/fonts'),
@@ -81,10 +81,10 @@
     ) );
 
     $wp_customize->add_control( 'bloge-heading-font-family-name', array(
-        'label'     => __( 'Headings (H1- H6) Font Family Name', 'bloge' ),
-        'section'   => 'bloge-typography-option',
-        'settings'  => 'bloge_theme_options[bloge-heading-font-family-name]',
-        'type'      => 'text',
-        'priority'  => 10,
+        'label'       => __( 'Headings (H1- H6) Font Family Name', 'bloge' ),
+        'section'     => 'bloge-typography-option',
+        'settings'    => 'bloge_theme_options[bloge-heading-font-family-name]',
+        'type'        => 'text',
+        'priority'    => 10,
         'description' => __( 'Insert Google Font Family Name.', 'bloge' ),
     ) );

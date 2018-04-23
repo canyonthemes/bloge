@@ -19,9 +19,10 @@ if (!function_exists('bloge_related_post_below')) :
     function bloge_related_post_below($post_id)
     {
         global $bloge_theme_options;
-        $bloge_theme_options  = bloge_get_theme_options();
+     
+       $bloge_theme_options  = bloge_get_theme_options();
        
-         $categories = get_the_category($post_id);
+         $categories         = get_the_category($post_id);
        
         if ($categories)
         {
@@ -29,16 +30,16 @@ if (!function_exists('bloge_related_post_below')) :
            
             foreach ($categories as $category)
             {
-                $category_ids[] = $category->term_id;
+                $category_ids[]  = $category->term_id;
                 $category_name[] = $category->slug;
             }
 
             $bloge_plus_cat_post_args = array(
-                'category__in' => $category_ids,
-                'post__not_in' => array($post_id),
-                'post_type' => 'post',
-                'posts_per_page' => 2,
-                'post_status' => 'publish',
+                'category__in'        => $category_ids,
+                'post__not_in'        => array($post_id),
+                'post_type'           => 'post',
+                'posts_per_page'      => 2,
+                'post_status'         => 'publish',
                 'ignore_sticky_posts' => true
             );
             $bloge_plus_featured_query = new WP_Query($bloge_plus_cat_post_args);

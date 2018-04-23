@@ -4,7 +4,7 @@ $wp_customize->add_section( 'bloge-feature-category', array(
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'title'          => __( 'Slider Section', 'bloge' ),
-    'description'          => __( 'Select the required category for the slider Recommended image for slider is 1920*700', 'bloge' )
+    'description'    => __( 'Select the required category for the slider Recommended image for slider is 1920*700', 'bloge' )
 
 ) );
 

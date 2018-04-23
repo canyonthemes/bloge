@@ -16,10 +16,16 @@
 			<div class="bloge-post-thumb post-thumb">
 			 <?php $content = get_the_content();
                $content_a = explode("<blockquote>",$content);
-               $content_b = explode("</blockquote>", $content_a[1]);
-               echo '<div class="quote-section">';
-               echo $content_b[0];
-               echo '</div>';
+               if( !empty( $content_a[1] )) { 
+	               	$content_b = explode("</blockquote>", $content_a[1]);
+	               echo '<div class="quote-section">';
+	               echo $content_b[0];
+	               echo '</div>';
+               }
+               else{
+               	the_excerpt();
+               }
+               
             ?>
 			</div><!-- .post-thumb-->
 			<div class="col-sm-12 post-meta-wrapper">

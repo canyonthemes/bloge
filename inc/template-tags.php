@@ -53,7 +53,7 @@ function bloge_entry_footer() {
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html__( '', 'bloge' ) );
+		$tags_list = get_the_tag_list();
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . '' . esc_html( '%1$s', 'bloge' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}

@@ -41,29 +41,8 @@
 			//fancybox
 			jQuery('.fancybox').fancybox();	
 					
-			//sticky sidebar
-		    var at_body = jQuery("body");
-		    var at_window = jQuery(window);
-
-	   		if(at_body.hasClass('at-sticky-sidebar')){
-	            if(at_body.hasClass('right-s-barr')){
-	                jQuery('#secondary, #primary').theiaStickySidebar();
-	            }
-	            else{
-	                jQuery('#secondary, #primary').theiaStickySidebar();
-	            }
-	        }
-
-	        //set the container that Masonry will be inside of in a var
-		    var container = document.querySelector('#masonry-loop');
-		    //create empty var msnry
-		    var msnry;
-		    // initialize Masonry after all images have loaded
-		    imagesLoaded( container, function() {
-		        msnry = new Masonry( container, {
-		            itemSelector: '.masonry-entry'
-		        });
-		    });
+	
+	       
 		    
     });
 
