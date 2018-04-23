@@ -92,8 +92,13 @@ if ( !function_exists('bloge_default_theme_options') ) :
 
             'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i', 'bloge'),
             'bloge-heading-font-family-name'=> esc_html__('Merriweather, serif','bloge'),
+<<<<<<< HEAD
 
             'bloge-footer-totop'     => 1,
+=======
+            
+            'bloge-footer-totop'     => 1, 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 			'bloge-read-more-text' => esc_html__('Continue Reading','bloge'),
 			'bloge-header-social' => 0,
 			'bloge-header-search' =>0,

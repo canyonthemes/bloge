@@ -24,15 +24,25 @@ global $bloge_theme_options;
                       foreach ( $gallery['src'] AS $src ) {
                       if($count ==0 )
                        {
+<<<<<<< HEAD
 				   ?>
+=======
+				   ?> 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 
 				      	<div class="food-col-left col-md-8 col-sm-8 col-xs-12">
 				          <div class="col-md-12 col-sm-12 col-xs-12">
 				            <div class="media-item">
 				              <div class="media-item-inner">
+<<<<<<< HEAD
 				              	   <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>">
 				                      <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
 				                    </a>
+=======
+				              	   <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>"> 
+				                      <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
+				                    </a>  
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 				              </div>
 				            </div>
 				          </div>
@@ -47,11 +57,19 @@ global $bloge_theme_options;
 				       <?php }
 
 	                     if ( $count == 1 || $count == 2)  {
+<<<<<<< HEAD
 
 	                     ?>
                     	<div class="media-item">
 				          <div class="media-item-inner">
 				             <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>">
+=======
+	                   
+	                     ?>
+                    	<div class="media-item">
+				          <div class="media-item-inner">
+				             <a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>">  
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 				              <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>">
 				           </a>
 				          </div>
@@ -64,6 +82,7 @@ global $bloge_theme_options;
                     { ?>
                     	<div class="clearfix"></div>
 				   <?php }  ?>
+<<<<<<< HEAD
 
 
 			       <?php
@@ -75,15 +94,44 @@ global $bloge_theme_options;
 			            <div class="media-item">
 			              <div class="media-item-inner">
 			              	<a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>">
+=======
+                   
+				  
+			       <?php
+			       if( $count >= 3)
+			       {
+			        ?>   
+			          <div class="col-md-4 col-sm-4 col-xs-12">
+			           
+			            <div class="media-item">
+			              <div class="media-item-inner">
+			              	<a class="fancybox" data-fancybox-group="gallery" href="<?php echo esc_url( $src ); ?>"> 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 			                   <img class="img-responsive" src="<?php echo esc_url( $src ) ; ?>" alt="">
 			                </a>
 			              </div>
 			            </div>
 			          </div>
+<<<<<<< HEAD
                		<?php } $count++; } ?>
 				</div>
 			</div>
   		<?php } ?>
+=======
+               		<?php } $count++; } ?>     
+				</div>
+			</div>
+  		<?php } ?>
+  		<div class="col-sm-12 post-meta-wrapper">
+			<?php
+			if ( 'post' === get_post_type() ) : ?>
+				<div class="entry-meta">
+					<?php bloge_posted_on(); ?>
+				</div><!-- .entry-meta -->
+			<?php
+			endif; ?>
+		</div>
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
   	</div>
 
   		<div class="row">
@@ -97,11 +145,19 @@ global $bloge_theme_options;
 					endif; ?>
 			    </div><!-- .entry-header -->
 			    <div class="entry-content">
+<<<<<<< HEAD
 				     <?php
 				      $content = get_the_content();
 				      $trimmed_content = wp_trim_words( $content, 60);
 				     ?>
 				     <p><?php echo esc_html( $trimmed_content ) ; ?></p>
+=======
+				     <?php 
+				      $content = get_the_content();
+				      $trimmed_content = wp_trim_words( $content, 60); 
+				     ?>
+				     <p><?php echo esc_html( $trimmed_content ) ; ?></p> 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 			    </div><!-- .entry-content -->
 			    <div class="entry-footer">
 					<div class="row">
@@ -112,6 +168,10 @@ global $bloge_theme_options;
 					</div>
 			    </div>
 		   </div>
+<<<<<<< HEAD
   		</div>
+=======
+  		</div>		
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 </article>
 

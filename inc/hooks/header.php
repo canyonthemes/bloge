@@ -146,7 +146,11 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="header-date">
+<<<<<<< HEAD
 							<span><i class="fa fa-calendar"></i> <?php
+=======
+							 <?php 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 								if( $bloge_header_date == 1 ):
 								 bloge_date_display();
 								endif;
@@ -157,8 +161,13 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 						<div class="logo-header-inner col-sm-12">
 		                   <?php
 		                      if (has_custom_logo()) { ?>
+<<<<<<< HEAD
 		                   ?>
 		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+=======
+		                
+		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 		                    	<?php  the_custom_logo();?>
 		                    </a>
 		                  <?php }

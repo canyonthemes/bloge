@@ -213,7 +213,11 @@ function bloge_scripts() {
     wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/framework/fancybox/js/jquery.fancybox.pack.js', array('jquery'), '4.5.0' );
 
     wp_enqueue_script( 'masonry' );
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 	/*Custom JS*/
 	wp_enqueue_script( 'bloge-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery'), '4.5.0' );
 
