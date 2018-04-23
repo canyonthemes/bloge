@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*adding sections for footer options*/
     $wp_customize->add_section( 'bloge-footer-option', array(
         'priority'       => 170,
@@ -25,10 +25,9 @@
 
 
 
-    /*Go to Top*/
+    /*copyright*/
 
-    $wp_customize->add_setting( 'bloge_theme_options[bloge-footer-totop]', 
-        array(
+    $wp_customize->add_setting( 'bloge_theme_options[bloge-footer-totop]', array(
         'capability'        => 'edit_theme_options',
         'default'           => $defaults['bloge-footer-totop'],
         'sanitize_callback' => 'bloge_sanitize_checkbox'

@@ -9,13 +9,13 @@
 *
 */
 if ( !function_exists('bloge_slider_images_selection') ) :
-  function bloge_slider_images_selection() 
-  { 
+  function bloge_slider_images_selection()
+  {
         global $bloge_theme_options;
 
 
         $category_id = $bloge_theme_options['bloge-feature-cat'];
-                     
+
         $args = array( 'cat' =>$category_id , 'posts_per_page' => -1 );
 
         $query = new WP_Query($args);
@@ -36,22 +36,22 @@ if ( !function_exists('bloge_slider_images_selection') ) :
                        <div class="feature-description text-center">
                           <figcaption>
                               <div class="main-cat">
-                                <?php 
+                                <?php
                                   $categories = get_the_category();
                                   if ( ! empty( $categories ) ) {
-                                      echo esc_html( $categories[0]->name );   
+                                      echo esc_html( $categories[0]->name );
                                   }
                                 ?>
                               </div>
                               <h2><?php the_title(); ?></h2>
-                            
+
                              <?php global $bloge_theme_options;
                                    	$bloge_slider_read_more = esc_html( $bloge_theme_options['bloge-slider-read-more'] ) ;
                             ?>
                             <?php if( !empty( $bloge_slider_read_more ) ){ ?>
-                                 <a href="<?php the_permalink(); ?>" class="read-more">         
-                                <?php 
-   	                                  
+                                 <a href="<?php the_permalink(); ?>" class="read-more">
+                                <?php
+
                                     echo $bloge_slider_read_more;
                                 ?>
                          <?php   } ?>
@@ -60,9 +60,9 @@ if ( !function_exists('bloge_slider_images_selection') ) :
                           </figcaption>
                        </div>
                        <div class="overley"></div>
-                  </div>        
+                  </div>
 
-<?php 
+<?php
               }
           endwhile; endif;wp_reset_postdata();
  }
@@ -78,7 +78,7 @@ if (!function_exists('bloge_go_to_top')) :
     function bloge_go_to_top()
     {
         ?>
-        <a id="toTop" href="#" title="<?php esc_attr_e('Go to Top', 'bloge'); ?>">
+        <a id="toTop" href="#" class="scrolltop" title="<?php esc_attr_e('Go to Top', 'bloge'); ?>">
             <i class="fa fa-angle-double-up"></i>
         </a>
     <?php
@@ -97,7 +97,7 @@ if (!function_exists('bloge_go_to_top')) :
 if ( ! function_exists( 'bloge_date_display' ) ) :
 
     function bloge_date_display( $format = 'l, F j, Y') {
-        echo date_i18n(get_option('date_format'));
+        echo '<span><i class="fa fa-calendar"></i>'. date_i18n(get_option('date_format'));
     }
 endif;
 
@@ -117,7 +117,7 @@ if( $showpost != 1 )
 {
  if (!function_exists('bloge_exclude_category_in_blog_page')) :
     function bloge_exclude_category_in_blog_page($query)
-    {   	
+    {
 
         if ($query->is_home && $query->is_main_query()  ) {
         	$bloge_theme_options    = bloge_get_theme_options();
@@ -157,7 +157,7 @@ if ( !function_exists('bloge_posts_navigation') ) :
             the_posts_navigation();
         }
         else{
-            echo"<div class='candid-pagination'>";
+            echo"<div class='pagination'>";
             global $wp_query;
             $big = 999999999; // need an unlikely integer
             echo paginate_links(array(

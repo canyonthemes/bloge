@@ -6,11 +6,12 @@
  *
  * @package bloge
  */
+get_header();
 ?>
 	<section id="primary" class="content-area text-center col-sm-12 col-md-12">
 		<main id="main" class="site-main" role="main">
 		<?php
-		
+
 		if ( have_posts() ) : ?>
 
 		<header class="page-header">
@@ -36,7 +37,7 @@
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
-			
+
 			do_action('bloge_action_navigation');
 
 		else :

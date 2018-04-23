@@ -15,12 +15,18 @@
 		<div class="authorinfo">
 
 			<?php
-					/**
-					 * Hook - bloge_doctype.
-					 *
-					 * @hooked bloge_doctype_action - 10
-					 */
-					do_action('bloge_meta_section_action'); ?>
+
+			if ( 'post' === get_post_type() ) : ?>
+
+				<div class="entry-meta">
+
+					<?php bloge_posted_on(); ?>
+
+				</div><!-- .entry-meta -->
+
+				<?php
+
+			endif; ?>
 
 		</div>
 
@@ -28,7 +34,7 @@
 
 			<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
-			
+
 
 			<?php if ( 'post' === get_post_type() ) : ?>
 
@@ -44,15 +50,17 @@
 
 		</div><!-- .entry-summary -->
 
-		<?php 
-		/**
-		 * Hook - bloge_doctype.
-		 *
-		 * @hooked bloge_doctype_action - 10
-		 */
-		do_action('bloge_footer_meta_section_action'); ?>
+
+
+		<footer class="entry-footer">
+
+			<?php bloge_entry_footer(); ?>
+
+		</footer><!-- .entry-footer -->
 
 	</div>
+
+
 
 </article><!-- #post-## -->
 

@@ -87,24 +87,22 @@ if ( !function_exists('bloge_default_theme_options') ) :
             'bloge-promo-cat'        => 0,
             'bloge-footer-copyright' => esc_html__('&copy; All Right Reserved','bloge'),
             'bloge-layout'           =>'right-sidebar',
-            'bloge-font-family-url'  =>esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
-            'bloge-font-family-name' => esc_html__('Poppins, sans-serif','bloge'),
+            'bloge-font-family-url'  =>esc_url('//fonts.googleapis.com/css?family=Open+Sans:300,400', 'bloge'),
+            'bloge-font-family-name' => esc_html__('Open Sans, sans-serif','bloge'),
 
-            'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900', 'bloge'),
-            'bloge-heading-font-family-name'=> esc_html__('Poppins, sans-serif','bloge'),
-            
-            'bloge-footer-totop'     => 1, 
+            'bloge-heading-font-family-url' => esc_url('//fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i', 'bloge'),
+            'bloge-heading-font-family-name'=> esc_html__('Merriweather, serif','bloge'),
+
+            'bloge-footer-totop'     => 1,
 			'bloge-read-more-text' => esc_html__('Continue Reading','bloge'),
 			'bloge-header-social' => 0,
 			'bloge-header-search' =>0,
 			'bloge-header-top-enable' =>0,
 			'bloge-header-date' => 0,
-
+			'bloge-sticky-sidebar-option' => 1,
 			'bloge-slider-read-more' => esc_html__('Read More','bloge'),
             'bloge-exclude-slider-category'=>'',
             'bloge-blog-pagination-type-options' => 'default',
-            'bloge-sticky-sidebar-options' => 1, 
-            'bloge-meta-options'           => 1,
 );
         return apply_filters( 'bloge_default_theme_options', $default_theme_options );
     }
@@ -123,17 +121,17 @@ if ( !function_exists('bloge_get_theme_options') ) :
     function bloge_get_theme_options() {
 
         $bloge_default_theme_options = bloge_default_theme_options();
-        
+
 
         $bloge_get_theme_options     = get_theme_mod( 'bloge_theme_options');
-        
+
         if( is_array( $bloge_get_theme_options ))
         {
             return array_merge( $bloge_default_theme_options, $bloge_get_theme_options );
         }
 
         else{
-            
+
             return $bloge_default_theme_options;
         }
 
@@ -146,13 +144,14 @@ endif;
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function bloge_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport         = 'refresh';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'refresh';
+    $wp_customize->get_setting( 'custom_logo' )->transport = 'refresh';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
     /*defaults options*/
     $defaults = bloge_get_theme_options();
-       
+
     /**
      * Load customizer custom-controls
      */
@@ -162,7 +161,7 @@ function bloge_customize_register( $wp_customize ) {
      * Load customizer feature section
      */
     require get_template_directory() . '/inc/customizer-inc/feature-section.php';
-    
+
     /**
      * Load customizer Design Layout section
      */
@@ -177,7 +176,7 @@ function bloge_customize_register( $wp_customize ) {
      * Load customizer custom-controls
      */
     require get_template_directory() . '/inc/customizer-inc/footer-section.php';
-	
+
 	   /**
      * Load customizer custom-controls
      */

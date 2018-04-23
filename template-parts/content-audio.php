@@ -33,13 +33,6 @@ global $bloge_theme_options;
 				    }
 				?>
 			</div><!-- .post-thumb-->
-			<?php
-			/**
-			 * Hook - bloge_doctype.
-			 *
-			 * @hooked bloge_doctype_action - 10
-			 */
-			do_action('bloge_meta_section_action'); ?>
 		</div>
 		<div class="row">
 			<div class="col-sm-10 col-sm-offset-1">
@@ -53,11 +46,11 @@ global $bloge_theme_options;
 				</div><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php 
+					<?php
 						$content = get_the_content();
-						$trimmed_content = wp_trim_words( $content, 60); 
+						$trimmed_content = wp_trim_words( $content, 60);
 					?>
-					<p><?php echo esc_html( $trimmed_content ) ; ?></p> 
+					<p><?php echo esc_html( $trimmed_content ) ; ?></p>
 				</div><!-- .entry-content -->
 
 				<div class="entry-footer">

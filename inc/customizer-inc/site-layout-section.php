@@ -58,7 +58,27 @@ $wp_customize->add_control('bloge_theme_options[bloge-exclude-slider-category]',
             'settings'  => 'bloge_theme_options[bloge-exclude-slider-category]',
             'type'	  	=> 'text',
             'priority'  => 10
-));
+         )
+    );
+
+
+/* Sticky Sidebar Option */
+$wp_customize->add_setting( 'bloge_theme_options[bloge-sticky-sidebar-option]', array(
+    'capability'		=> 'edit_theme_options',
+    'default'			=> $defaults['bloge-sticky-sidebar-option'],
+    'sanitize_callback' => 'bloge_sanitize_checkbox'
+) );
+
+$wp_customize->add_control('bloge_theme_options[bloge-sticky-sidebar-option]',
+            array(
+            'label'		=> __( 'Enable/Disable Sticky Sidebar', 'bloge'),
+            'description' => __('Checked to enable sticky sidebar', 'bloge'),
+            'section'   => 'bloge-site-layout',
+            'settings'  => 'bloge_theme_options[bloge-sticky-sidebar-option]',
+            'type'	  	=> 'checkbox',
+            'priority'  => 10
+         )
+    );
 
 /* Pagination Options */
 $choices = bloge_pagination_option();
@@ -79,42 +99,5 @@ $wp_customize->add_control('bloge_theme_options[bloge-blog-pagination-type-optio
             'priority'  => 10
          )
     );
-
-/* Sticky Sidebar Options */
-$wp_customize->add_setting( 'bloge_theme_options[bloge-sticky-sidebar-options]', array(
-    'capability'        => 'edit_theme_options',
-    'default'           => $defaults['bloge-sticky-sidebar-options'],
-    'sanitize_callback' => 'bloge_sanitize_checkbox'
-) );
-
-$wp_customize->add_control('bloge-sticky-sidebar-options',
-            array(
-            'label'     => __( 'Sidebar Options', 'bloge'),
-            'description' => __('Unchecked and Save & Publish to Save the changes', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-sticky-sidebar-options]',
-            'type'      => 'checkbox',
-            'priority'  => 10
-         )
-);
-
-
-/* Meta Options */
-$wp_customize->add_setting( 'bloge_theme_options[bloge-meta-options]', array(
-    'capability'        => 'edit_theme_options',
-    'default'           => $defaults['bloge-meta-options'],
-    'sanitize_callback' => 'bloge_sanitize_checkbox'
-) );
-
-$wp_customize->add_control('bloge-meta-options',
-            array(
-            'label'     => __( 'Meta Options', 'bloge'),
-            'description' => __('Hide Posted Date From Blog Page', 'bloge'),
-            'section'   => 'bloge-site-layout',
-            'settings'  => 'bloge_theme_options[bloge-meta-options]',
-            'type'      => 'checkbox',
-            'priority'  => 10
-         )
-);
 
 

@@ -1,6 +1,6 @@
 <?php
 /*
-* Header Hook Section 
+* Header Hook Section
 * @since 1.0.0
 */
 /* ------------------------------
@@ -105,23 +105,23 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 	$bloge_header_search = $bloge_theme_options['bloge-header-search'];
 	$bloge_header_date = $bloge_theme_options['bloge-header-date'];
 	$bloge_header_social = $bloge_theme_options['bloge-header-social'];
-	if($bloge_header_top_enable == 1 ): 
+	if($bloge_header_top_enable == 1 ):
 	?>
 		<div class="top-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="top-level-menu">
-							<?php 
+							<?php
 								if (has_nav_menu('top'))
 
 							 {
 
-								
+
 
 								wp_nav_menu( array( 'theme_location' => 'top', 'menu_class
 
-									' => 'nav navbar-top' ) ); 
+									' => 'nav navbar-top' ) );
 
 							 }
 							?>
@@ -129,10 +129,10 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 					</div>
 					<div class="col-sm-5">
 						<div class="top-search">
-							<?php 
+							<?php
 							if ($bloge_header_search == 1 ):
 								get_search_form();
-							endif; 
+							endif;
 							?>
 						</div>
 					</div>
@@ -146,24 +146,24 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="header-date">
-							<span><?php 
+							<span><i class="fa fa-calendar"></i> <?php
 								if( $bloge_header_date == 1 ):
-								 bloge_date_display(); 
+								 bloge_date_display();
 								endif;
 								?></span>
 						</div>
 					</div>
-					<div class="col-sm-7">
+					<div class="col-sm-6">
 						<div class="logo-header-inner col-sm-12">
 		                   <?php
 		                      if (has_custom_logo()) { ?>
 		                   ?>
-		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
+		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		                    	<?php  the_custom_logo();?>
 		                    </a>
-		                  <?php } 
+		                  <?php }
 		                  	else {
-		                  ?>  
+		                  ?>
 		                    <div class="togo-text">
 		                    	<?php
 								if ( is_front_page() && is_home() ) : ?>
@@ -178,16 +178,16 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 									<?php
 								endif; ?>
 		                    </div>
-		                 <?php } ?>   
+		                 <?php } ?>
 						</div>
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-3">
 						<div class="social-links">
-							<?php 
+							<?php
 							if (has_nav_menu('social') && $bloge_header_social == 1 )
 							 {
 							wp_nav_menu( array( 'theme_location' => 'social', 'menu_class
-									' => 'nav navbar-social' ) ); 
+									' => 'nav navbar-social' ) );
 							 }
 							?>
 						</div>
@@ -220,19 +220,19 @@ if ( ! function_exists( 'bloge_header_lower_section' ) ) :
     		<!-- Main Menu -->
             <nav class="main-menu">
             	<div class="navbar-header">
-                    <!-- Toggle Button -->    	
+                    <!-- Toggle Button -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    	<span class="icon-bar"><?php _e('Toggle navigation', 'bloge');?></span>
+                    	<span class="sr-only"><?php _e('Toggle navigation', 'bloge');?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                 </div>
                 <div class="navbar-collapse collapse clearfix">
-					<?php 
+					<?php
 						if (has_nav_menu('primary'))
 							{
-								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'navigation ' ) ); 
+								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'navigation ' ) );
 							}
 					?>
 				</div><!-- /.navbar-collapse -->
@@ -263,10 +263,10 @@ if ( ! function_exists( 'bloge_header_slider_action' ) ) :
 			<section  class="owl-wrapper clearfix">
 				<div class="container">
 					<div id="main-slider">
-					<?php if(is_home() || is_front_page () ) {
-						 bloge_slider_images_selection();
-						}
-					?>
+						<?php if(is_home() || is_front_page () ) {
+							 bloge_slider_images_selection();
+							}
+						?>
 					</div>
 				</div>
 			</section>
