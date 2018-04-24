@@ -18,7 +18,7 @@ global $bloge_theme_options;
 			    $audio = false;
 			    # Only get audio from the content if a playlist isn't present.
 			    if ( false === strpos( $content, 'wp-playlist-script' ) ) {
-			        $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
+			        $audio = get_media_embedded_in_content( $content, array( 'audio', 'iframe' ) );
 			    }
 			?>
 			<!--post thumbnal options-->
@@ -46,11 +46,7 @@ global $bloge_theme_options;
 				</div><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php 
-						$content = get_the_content();
-						$trimmed_content = wp_trim_words( $content, 60); 
-					?>
-					<p><?php echo esc_html( $trimmed_content ) ; ?></p> 
+					<p><?php the_excerpt(); ?></p> 
 				</div><!-- .entry-content -->
 
 				<div class="entry-footer">
