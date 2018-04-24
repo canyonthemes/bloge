@@ -46,7 +46,15 @@ global $bloge_theme_options;
 				</div><!-- .entry-header -->
 
 				<div class="entry-content">
+<<<<<<< HEAD
 					<p><?php the_excerpt(); ?></p> 
+=======
+					<?php
+						$content = get_the_content();
+						$trimmed_content = wp_trim_words( $content, 60);
+					?>
+					<p><?php echo esc_html( $trimmed_content ) ; ?></p>
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 				</div><!-- .entry-content -->
 
 				<div class="entry-footer">

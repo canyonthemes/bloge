@@ -1,6 +1,6 @@
 <?php
 /*
-* Header Hook Section 
+* Header Hook Section
 * @since 1.0.0
 */
 /* ------------------------------
@@ -100,6 +100,7 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 <header role="header">
 	<?php
 	global $bloge_theme_options;
+<<<<<<< HEAD
 	$bloge_theme_options        = bloge_get_theme_options();
 	$bloge_header_top_enable    = $bloge_theme_options['bloge-header-top-enable'];
 	$bloge_header_search        = $bloge_theme_options['bloge-header-search'];
@@ -107,20 +108,33 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 	$bloge_header_social        = $bloge_theme_options['bloge-header-social'];
 	
 	if( $bloge_header_top_enable == 1 ):
+=======
+	$bloge_theme_options  = bloge_get_theme_options();
+	$bloge_header_top_enable = $bloge_theme_options['bloge-header-top-enable'];
+	$bloge_header_search = $bloge_theme_options['bloge-header-search'];
+	$bloge_header_date = $bloge_theme_options['bloge-header-date'];
+	$bloge_header_social = $bloge_theme_options['bloge-header-social'];
+	if($bloge_header_top_enable == 1 ):
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 	?>
 		<div class="top-header">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-7">
 						<div class="top-level-menu">
-							<?php 
+							<?php
 								if (has_nav_menu('top'))
 
 							 {
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 								wp_nav_menu( array( 'theme_location' => 'top', 'menu_class
 
-									' => 'nav navbar-top' ) ); 
+									' => 'nav navbar-top' ) );
 
 							 }
 							?>
@@ -128,12 +142,16 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 					</div>
 					<div class="col-sm-5">
 						<div class="top-search">
-							<?php 
+							<?php
 							if ($bloge_header_search == 1 ):
 								
 								get_search_form();
+<<<<<<< HEAD
 						
 							endif; 
+=======
+							endif;
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 							?>
 						</div>
 					</div>
@@ -147,10 +165,20 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 				<div class="row">
 					<div class="col-sm-3">
 						<div class="header-date">
+<<<<<<< HEAD
 							<?php 
 								if( $bloge_header_date == 1 ):
 									?>
 							<?php bloge_date_display(); 
+=======
+<<<<<<< HEAD
+							<span><i class="fa fa-calendar"></i> <?php
+=======
+							 <?php 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
+								if( $bloge_header_date == 1 ):
+								 bloge_date_display();
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 								endif;
 								?></span>
 						</div>
@@ -159,13 +187,22 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 						<div class="logo-header-inner col-sm-12">
 		                   <?php
 		                      if (has_custom_logo()) { ?>
+<<<<<<< HEAD
 		                   
+=======
+<<<<<<< HEAD
+		                   ?>
+		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+=======
+		                
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 		                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 		                    	<?php  the_custom_logo();?>
 		                    </a>
-		                  <?php } 
+		                  <?php }
 		                  	else {
-		                  ?>  
+		                  ?>
 		                    <div class="togo-text">
 		                    	<?php
 								if ( is_front_page() && is_home() ) : ?>
@@ -180,16 +217,16 @@ if ( ! function_exists( 'bloge_header_section' ) ) :
 									<?php
 								endif; ?>
 		                    </div>
-		                 <?php } ?>   
+		                 <?php } ?>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="social-links">
-							<?php 
+							<?php
 							if (has_nav_menu('social') && $bloge_header_social == 1 )
 							 {
 							wp_nav_menu( array( 'theme_location' => 'social', 'menu_class
-									' => 'nav navbar-social' ) ); 
+									' => 'nav navbar-social' ) );
 							 }
 							?>
 						</div>
@@ -223,7 +260,7 @@ if ( ! function_exists( 'bloge_header_lower_section' ) ) :
     		<!-- Main Menu -->
             <nav class="main-menu">
             	<div class="navbar-header">
-                    <!-- Toggle Button -->    	
+                    <!-- Toggle Button -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     	<span class="sr-only"><?php _e('Toggle navigation', 'bloge');?></span>
                         <span class="icon-bar"></span>
@@ -232,10 +269,15 @@ if ( ! function_exists( 'bloge_header_lower_section' ) ) :
                     </button>
                 </div>
                 <div class="navbar-collapse collapse clearfix">
+<<<<<<< HEAD
 					<?php 
 						if ( has_nav_menu('primary'))
+=======
+					<?php
+						if (has_nav_menu('primary'))
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 							{
-								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'navigation ' ) ); 
+								wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'navigation ' ) );
 							}
 						  else
 						  { ?>

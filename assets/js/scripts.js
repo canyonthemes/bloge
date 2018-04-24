@@ -8,7 +8,11 @@
 				responsive: true,
 				navigation : true,
 				navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
+<<<<<<< HEAD
+			});
+=======
 			});	
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
 			//Submenu Dropdown Toggle
 		    if($('.main-menu  li.menu-item-has-children ul').length){
 		        $('.main-menu  li.menu-item-has-children').append('<div class="dropdown-btn"><Span class="fa fa-angle-down"></span></div>');
@@ -21,6 +25,10 @@
 		            e.preventDefault();
 		        });
 	    	}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
     	    //Click event to scroll to top
     		//Check to see if the window is top if not then display button
 			jQuery(window).scroll(function($){
@@ -31,12 +39,17 @@
 					jQuery('.scrolltop').fadeOut();
 				}
 			});
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 			//Click event to scroll to top
 			jQuery('.scrolltop').click(function($){
 				jQuery('html, body').animate({scrollTop : 0},800);
 				return false;
 			});
+<<<<<<< HEAD
 
 			//fancybox
 			jQuery('.fancybox').fancybox();	
@@ -44,6 +57,68 @@
 	
 	       
 		    
+=======
+
+			//fancybox
+			jQuery('.fancybox').fancybox();
+
+			//sticky sidebar
+		    var at_body = jQuery("body");
+		    var at_window = jQuery(window);
+
+	   		if(at_body.hasClass('at-sticky-sidebar')){
+	            if(at_body.hasClass('right-s-barr')){
+	                jQuery('#secondary, #primary').theiaStickySidebar();
+	            }
+	            else{
+	                jQuery('#secondary, #primary').theiaStickySidebar();
+	            }
+	        }
+
+	        //set the container that Masonry will be inside of in a var
+		    var container = document.querySelector('#masonry-loop');
+		    //create empty var msnry
+		    var msnry;
+		    // initialize Masonry after all images have loaded
+		    imagesLoaded( container, function() {
+		        msnry = new Masonry( container, {
+		            itemSelector: '.masonry-entry'
+		        });
+		    });
+
+=======
+	    	    //Click event to scroll to top
+	    		jQuery('#toTop').click(function($){
+	    			jQuery('html, body').animate({scrollTop : 0},800);
+	    			return false;
+	    		});			
+				//fancybox
+				jQuery('.fancybox').fancybox();			
+				//sticky sidebar
+		    var at_body = jQuery("body");
+		    var at_window = jQuery(window);
+
+	   		if(at_body.hasClass('at-sticky-sidebar')){
+	            if(at_body.hasClass('right-s-barr')){
+	                jQuery('#secondary, #primary').theiaStickySidebar();
+	            }
+	            else{
+	                jQuery('#secondary, #primary').theiaStickySidebar();
+	            }
+	        }
+
+	        //set the container that Masonry will be inside of in a var
+		    var container = document.querySelector('#masonry-loop');
+		    //create empty var msnry
+		    var msnry;
+		    // initialize Masonry after all images have loaded
+		    imagesLoaded( container, function() {
+		        msnry = new Masonry( container, {
+		            itemSelector: '.masonry-entry'
+		        });
+		    });
+>>>>>>> 05abef8196b7bfda8d1551815bf750502d23fe5c
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
     });
 
 })(jQuery);

@@ -50,11 +50,11 @@
 				</div><!-- .entry-header -->
 
 				<div class="entry-content">
-					<?php 
+					<?php
 						$content = get_the_content();
-						$trimmed_content = wp_trim_words( $content, 60); 
+						$trimmed_content = wp_trim_words( $content, 60);
 					?>
-					<p><?php echo esc_html( $trimmed_content ) ; ?></p> 
+					<p><?php echo esc_html( $trimmed_content ) ; ?></p>
 				</div><!-- .entry-content -->
 
 				<div class="entry-footer">

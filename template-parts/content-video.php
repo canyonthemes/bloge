@@ -23,7 +23,7 @@
 		<div class="row reletive">
 			<!--post thumbnal options-->
 			<div class="bloge-post-thumb post-thumb">
-           <?php 
+           <?php
                 if ( ! empty( $video ) ) {
                     foreach ( $video as $video_html ) {
                         echo '<div class="bloge-video-section">';
@@ -55,7 +55,15 @@
 				</div><!-- .entry-header -->
 
 				<div class="entry-content">
+<<<<<<< HEAD
 					<p><?php the_excerpt(); ?></p> 
+=======
+					<?php
+						$content = get_the_content();
+						$trimmed_content = wp_trim_words( $content, 60);
+					?>
+					<p><?php echo esc_html( $trimmed_content ) ; ?></p>
+>>>>>>> ac119dd2dc130b6732d971446365b2be02e71367
 				</div><!-- .entry-content -->
 
 				<div class="entry-footer">

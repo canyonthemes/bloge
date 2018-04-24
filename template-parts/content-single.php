@@ -44,7 +44,7 @@
 						endif; ?>
 					</header><!-- .entry-header -->
 
-					
+
 
 					<div class="entry-content">
 
@@ -74,7 +74,7 @@
 
 					</div><!-- .entry-content -->
 
-					
+
 
 				</div>
 
