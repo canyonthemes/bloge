@@ -21,6 +21,13 @@ Bloge is a simple and easy to use, modern and creative, user friendly and elegan
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+## 1.0.1 - April 27 2018 ##
+* Minor Design Fixed
+* Promo Section Added
+* Boxed and Full Width option added
+* Screenshot Changed
+
 ## 0.0.1 - April 23 2018 ##
 * Minor Design Changed
 * Managed codes using hooks
@@ -52,4 +59,6 @@ Bloge is distributed under the terms of the GNU General Public License v2
 
 == Image used in screenshot ==
 * https://pixabay.com/en/desktop-feminine-mockup-white-blog-2325627/
-* https://pixabay.com/en/snow-women-happy-joy-girls-1283278/
+* https://pixabay.com/en/lens-obsolete-shutter-classic-3114729/
+* https://pixabay.com/en/time-clock-night-home-office-2980690/
+* https://pixabay.com/en/lens-technology-carl-zeiss-jena-3353459/

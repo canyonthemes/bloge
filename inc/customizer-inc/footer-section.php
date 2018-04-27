@@ -1,4 +1,4 @@
-<?php
+<?php 
 /*adding sections for footer options*/
     $wp_customize->add_section( 'bloge-footer-option', array(
         'priority'       => 170,

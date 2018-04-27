@@ -25,7 +25,7 @@ if( 'left-sidebar' == $designlayout ){
 					get_template_part( 'template-parts/content','single');
 					?>
 					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1">
+						<div class="content-box">
 							<?php
 								the_post_navigation( array(
 									'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'bloge' ) . '</span> ' .
@@ -43,8 +43,6 @@ if( 'left-sidebar' == $designlayout ){
 			                     * @hooked bloge_related_posts
 			                     */
 				                do_action('bloge_related_posts' ,get_the_ID() );
-
-								
 							?>
 						</div>
 						<?php 

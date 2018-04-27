@@ -6,6 +6,29 @@ $wp_customize->add_section( 'bloge-site-layout', array(
     'title'          => __( 'Blog Options', 'bloge' )
 ) );
 
+
+// Setting global_layout.
+$wp_customize->add_setting( 'bloge_theme_options[site_layout]',
+    array(
+        'default'           => $defaults['site_layout'],
+        'sanitize_callback' => 'bloge_sanitize_select',
+    )
+);
+$wp_customize->add_control( 'bloge_theme_options[site_layout]',
+    array(
+        'label'    => esc_html__( 'Site Layout', 'bloge' ),
+        'section'  => 'bloge-site-layout',
+        'type'     => 'radio',
+        'priority' => 7,
+        'choices'  => array(
+                'full-width-wrapper'  => esc_html__( 'Full Width', 'bloge' ),
+                'box-wrapper'         => esc_html__( 'Boxed', 'bloge' ),
+            ),
+    )
+);
+
+
+
 /* feature cat selection */
 $wp_customize->add_setting( 'bloge_theme_options[bloge-layout]', array(
     'capability'		=> 'edit_theme_options',

@@ -6,6 +6,9 @@
  *
  * @package bloge
  */
+    global $bloge_theme_options;
+	$bloge_theme_options   = bloge_get_theme_options();
+    $bloge_site_layout     = $bloge_theme_options['site_layout'];
 ?>
 <?php
 	/**
@@ -32,6 +35,7 @@
 </head>
 
 <body <?php body_class('at-sticky-sidebar');?>>
+	<div class="<?php echo  esc_attr( $bloge_site_layout ); ?>">
 
 <?php
 
@@ -73,6 +77,16 @@
 	 * @hooked bloge_header_slider_section_action - 10
 	 */
 	do_action( 'bloge_header_slider_section_action' );
+
+
+	/**
+	 * Hook - bloge_header_promo_action.
+	 *
+	 * @hooked bloge_header_promo_section_action - 10
+	 */
+	do_action( 'bloge_header_promo_section_action' );
+
+	
 
 	/**
 	 * Hook - bloge_header_end_wrapper.
